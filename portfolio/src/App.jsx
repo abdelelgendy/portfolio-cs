@@ -1,26 +1,29 @@
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
-import Projects from './pages/Projects';
-import Contact from './pages/Contact';
 import './App.css';
 
 function App() {
   return (
-    <Router>
+    <div className="min-h-screen bg-gray-50">
       <Navbar />
-      <div style={{ padding: '2rem' }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </div>
-    </Router>
+      
+      {/* Home Section */}
+      <section id="home" className="section-padding bg-white">
+        <div className="container">
+          <Home />
+        </div>
+      </section>
+      
+      {/* About Section */}
+      <section id="about" className="section-padding bg-gray-50">
+        <div className="container">
+          <About />
+        </div>
+      </section>
+    </div>
   );
 }
 
-export default App
+export default App;
