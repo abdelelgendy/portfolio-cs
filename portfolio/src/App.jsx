@@ -174,13 +174,13 @@ function App() {
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Contact</h2>
           <p className="text-gray-600 mb-8">Get in touch!</p>
           <div className="flex justify-center gap-8">
-            <a href="mailto:kiges1324@mylaurier.ca" className="text-blue-600 hover:text-blue-700">
+            <a href="mailto:elge8132@mylaurier.ca" className="text-blue-600 hover:text-blue-700">
               📧 Email
             </a>
-            <a href="https://linkedin.com/in/abdelrahman-elgendy" className="text-blue-600 hover:text-blue-700">
+            <a href="https://www.linkedin.com/in/abdelrahman-elgendy-cs/" className="text-blue-600 hover:text-blue-700">
               💼 LinkedIn
             </a>
-            <a href="https://github.com/abdelrahmanelgendy" className="text-blue-600 hover:text-blue-700">
+            <a href="https://github.com/abdelelgendy" className="text-blue-600 hover:text-blue-700">
               💻 GitHub
             </a>
           </div>

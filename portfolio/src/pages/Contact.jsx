@@ -44,7 +44,7 @@ export default function Contact() {
             Feel free to reach out if you'd like to discuss potential collaborations or just want to chat about web development!
           </p>
           <a 
-            href="mailto:kiges1324@mylaurier.ca" 
+            href="mailto:elge8132@mylaurier.ca" 
             className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors inline-block"
           >
             Send Email
