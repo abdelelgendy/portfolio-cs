@@ -1,3 +1,4 @@
+import { useState } from 'react';
 
 function App() {
   // Projects data
@@ -7,7 +8,8 @@ function App() {
       title: "React Movie Discovery App",
       description: "Responsive movie search application using React.js and Tailwind CSS with real-time API integration.",
       techStack: ["React", "Tailwind CSS", "REST API", "JavaScript"],
-      color: "bg-blue-500",
+      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4", // Sample video URL
+      thumbnailUrl: "https://via.placeholder.com/400x250/3B82F6/FFFFFF?text=Movie+Demo",
       liveLink: "https://example.com",
       codeLink: "https://github.com/example/movie-app"
     },
@@ -16,7 +18,8 @@ function App() {
       title: "MealMind - Meal Planning App",
       description: "Full-stack meal planning application with React, Vite, and Supabase for personalized recommendations.",
       techStack: ["React", "Vite", "Supabase", "JavaScript"],
-      color: "bg-green-500",
+      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4", // Sample video URL
+      thumbnailUrl: "https://via.placeholder.com/400x250/10B981/FFFFFF?text=MealMind+Demo",
       liveLink: "https://example.com",
       codeLink: "https://github.com/example/mealmind"
     },
@@ -25,39 +28,87 @@ function App() {
       title: "Portfolio Website",
       description: "Modern, responsive portfolio website built with React and Tailwind CSS.",
       techStack: ["React", "Vite", "Tailwind CSS"],
-      color: "bg-purple-500",
+      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4", // Sample video URL
+      thumbnailUrl: "https://via.placeholder.com/400x250/8B5CF6/FFFFFF?text=Portfolio+Demo",
       liveLink: "https://example.com",
       codeLink: "https://github.com/example/portfolio"
     }
   ];
 
-  // Project Card Component
-  const ProjectCard = ({ project }) => (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-      <div className={`h-48 ${project.color} flex items-center justify-center`}>
-        <span className="text-white text-xl font-bold">{project.title.split(' ')[0]}</span>
-      </div>
-      <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-        <p className="text-gray-600 text-sm mb-4">{project.description}</p>
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.techStack.map((tech, index) => (
-            <span key={index} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">
-              {tech}
-            </span>
-          ))}
+  // Project Card Component with Video
+  const ProjectCard = ({ project }) => {
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    const handlePlayClick = () => {
+      setIsPlaying(true);
+    };
+
+    return (
+      <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <div className="relative h-48 bg-gray-900">
+          {!isPlaying ? (
+            // Thumbnail with play button
+            <div className="relative w-full h-full">
+              <img 
+                src={project.thumbnailUrl} 
+                alt={`${project.title} thumbnail`}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                <button
+                  onClick={handlePlayClick}
+                  className="bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full p-4 transition-all duration-200 transform hover:scale-110"
+                >
+                  <svg 
+                    width="24" 
+                    height="24" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    className="text-gray-800"
+                  >
+                    <path 
+                      d="M8 5v14l11-7z" 
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          ) : (
+            // Video player
+            <video
+              controls
+              autoPlay
+              className="w-full h-full object-cover"
+              onEnded={() => setIsPlaying(false)}
+            >
+              <source src={project.videoUrl} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          )}
         </div>
-        <div className="flex gap-3">
-          <a href={project.liveLink} className="text-blue-600 hover:text-blue-700 text-sm font-medium">
-            Live Demo
-          </a>
-          <a href={project.codeLink} className="text-gray-600 hover:text-gray-700 text-sm font-medium">
-            View Code
-          </a>
+        <div className="p-6">
+          <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+          <p className="text-gray-600 text-sm mb-4">{project.description}</p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.techStack.map((tech, index) => (
+              <span key={index} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">
+                {tech}
+              </span>
+            ))}
+          </div>
+          <div className="flex gap-3">
+            <a href={project.liveLink} className="text-blue-600 hover:text-blue-700 text-sm font-medium">
+              Live Demo
+            </a>
+            <a href={project.codeLink} className="text-gray-600 hover:text-gray-700 text-sm font-medium">
+              View Code
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -101,7 +152,7 @@ function App() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Projects</h2>
-            <p className="text-gray-600">Here are some of my recent projects</p>
+            <p className="text-gray-600">Here are some of my recent projects with video demos</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project) => (
