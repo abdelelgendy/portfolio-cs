@@ -50,7 +50,7 @@ function App() {
     };
 
     return (
-      <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+      <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-gray-700">
         <div className="relative h-48 bg-gray-900">
           {!isPlaying ? (
             // Thumbnail with play button
@@ -60,7 +60,7 @@ function App() {
                 alt={`${project.title} thumbnail`}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
                 <button
                   onClick={handlePlayClick}
                   className="bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full p-4 transition-all duration-200 transform hover:scale-110"
@@ -94,20 +94,20 @@ function App() {
           )}
         </div>
         <div className="p-6">
-          <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-          <p className="text-gray-600 text-sm mb-4">{project.description}</p>
+          <h3 className="text-xl font-semibold mb-2 text-white">{project.title}</h3>
+          <p className="text-gray-300 text-sm mb-4">{project.description}</p>
           <div className="flex flex-wrap gap-2 mb-4">
             {project.techStack.map((tech, index) => (
-              <span key={index} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">
+              <span key={index} className="px-2 py-1 bg-gray-700 text-gray-300 text-xs rounded">
                 {tech}
               </span>
             ))}
           </div>
           <div className="flex gap-3">
-            <a href={project.liveLink} className="text-blue-600 hover:text-blue-700 text-sm font-medium">
+            <a href={project.liveLink} className="text-blue-400 hover:text-blue-300 text-sm font-medium">
               Live Demo
             </a>
-            <a href={project.codeLink} className="text-gray-600 hover:text-gray-700 text-sm font-medium">
+            <a href={project.codeLink} className="text-gray-400 hover:text-gray-300 text-sm font-medium">
               View Code
             </a>
           </div>
@@ -117,28 +117,28 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <nav className="fixed top-0 w-full bg-white shadow-sm z-50">
+    <div className="min-h-screen bg-gray-900">
+      <nav className="fixed top-0 w-full bg-gray-800 shadow-lg z-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
-            <div className="font-bold text-xl text-gray-900">Abdelrahman Elgendy</div>
+            <div className="font-bold text-xl text-white">Abdelrahman Elgendy</div>
             <div className="hidden md:flex space-x-8">
-              <a href="#home" className="text-gray-600 hover:text-blue-600">Home</a>
-              <a href="#about" className="text-gray-600 hover:text-blue-600">About</a>
-              <a href="#projects" className="text-gray-600 hover:text-blue-600">Projects</a>
-              <a href="#contact" className="text-gray-600 hover:text-blue-600">Contact</a>
+              <a href="#home" className="text-gray-300 hover:text-blue-400">Home</a>
+              <a href="#about" className="text-gray-300 hover:text-blue-400">About</a>
+              <a href="#projects" className="text-gray-300 hover:text-blue-400">Projects</a>
+              <a href="#contact" className="text-gray-300 hover:text-blue-400">Contact</a>
             </div>
           </div>
         </div>
       </nav>
       
       {/* Home Section */}
-      <section id="home" className="pt-20 py-20 bg-white">
+      <section id="home" className="pt-20 py-20 bg-gray-800">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            Hi, I'm <span className="text-blue-600">Abdelrahman Elgendy</span>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            Hi, I'm <span className="text-blue-400">Abdelrahman Elgendy</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Frontend Developer passionate about creating beautiful web experiences 
             with React and modern technologies.
           </p>
@@ -146,7 +146,7 @@ function App() {
             <a href="#projects" className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg">
               View Projects
             </a>
-            <a href="#contact" className="border border-gray-300 hover:bg-gray-50 text-gray-700 font-medium py-3 px-6 rounded-lg">
+            <a href="#contact" className="border border-gray-600 hover:bg-gray-700 text-gray-300 font-medium py-3 px-6 rounded-lg">
               Contact Me
             </a>
           </div>
@@ -154,11 +154,11 @@ function App() {
       </section>
       
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gray-50">
+      <section id="projects" className="py-20 bg-gray-900">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Projects</h2>
-            <p className="text-gray-600">Here are some of my recent projects with video demos</p>
+            <h2 className="text-3xl font-bold text-white mb-4">Projects</h2>
+            <p className="text-gray-300">Here are some of my recent projects with video demos</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project) => (
@@ -169,18 +169,18 @@ function App() {
       </section>
       
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white">
+      <section id="contact" className="py-20 bg-gray-800">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Contact</h2>
-          <p className="text-gray-600 mb-8">Get in touch!</p>
+          <h2 className="text-3xl font-bold text-white mb-4">Contact</h2>
+          <p className="text-gray-300 mb-8">Get in touch!</p>
           <div className="flex justify-center gap-8">
-            <a href="mailto:elge8132@mylaurier.ca" className="text-blue-600 hover:text-blue-700">
+            <a href="mailto:elge8132@mylaurier.ca" className="text-blue-400 hover:text-blue-300">
               📧 Email
             </a>
-            <a href="https://www.linkedin.com/in/abdelrahman-elgendy-cs/" className="text-blue-600 hover:text-blue-700">
+            <a href="https://www.linkedin.com/in/abdelrahman-elgendy-cs/" className="text-blue-400 hover:text-blue-300">
               💼 LinkedIn
             </a>
-            <a href="https://github.com/abdelelgendy" className="text-blue-600 hover:text-blue-700">
+            <a href="https://github.com/abdelelgendy" className="text-blue-400 hover:text-blue-300">
               💻 GitHub
             </a>
           </div>
