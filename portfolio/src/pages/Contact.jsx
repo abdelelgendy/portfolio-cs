@@ -2,6 +2,21 @@ export default function Contact() {
   return (
     <div className="max-w-4xl mx-auto bg-gray-900 min-h-screen py-20">
       <div className="text-center mb-12">
+        {/* Profile Picture */}
+        <div className="mb-6">
+          <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-blue-400 shadow-lg">
+            <img 
+              src="/profile-picture.jpg" 
+              alt="Abdelrahman Elgendy"
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                // Fallback to a placeholder if image doesn't exist
+                e.target.src = "https://via.placeholder.com/128x128/3B82F6/FFFFFF?text=AE";
+              }}
+            />
+          </div>
+        </div>
+        
         <h2 className="text-3xl font-bold text-white mb-4">Contact</h2>
         <p className="text-gray-300 max-w-2xl mx-auto">
           Get in touch! I'm always open to discussing new opportunities.

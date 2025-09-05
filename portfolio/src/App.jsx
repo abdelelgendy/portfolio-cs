@@ -135,6 +135,21 @@ function App() {
       {/* Home Section */}
       <section id="home" className="pt-20 py-20 bg-gray-800">
         <div className="max-w-4xl mx-auto px-4 text-center">
+          {/* Profile Picture */}
+          <div className="mb-8">
+            <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-blue-400 shadow-lg">
+              <img 
+                src="/profile-picture.jpg" 
+                alt="Abdelrahman Elgendy"
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  // Fallback to a placeholder if image doesn't exist
+                  e.target.src = "https://via.placeholder.com/128x128/3B82F6/FFFFFF?text=AE";
+                }}
+              />
+            </div>
+          </div>
+          
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Hi, I'm <span className="text-blue-400">Abdelrahman Elgendy</span>
           </h1>
