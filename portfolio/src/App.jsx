@@ -8,30 +8,36 @@ function App() {
       title: "React Movie Discovery App",
       description: "Responsive movie search application using React.js and Tailwind CSS with real-time API integration.",
       techStack: ["React", "Tailwind CSS", "REST API", "JavaScript"],
-      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4", // Sample video URL
+      // Replace with your actual video: "/videos/movie-app-demo.mp4"
+      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+      // Replace with your actual thumbnail: "/thumbnails/movie-app-thumb.jpg"
       thumbnailUrl: "https://via.placeholder.com/400x250/3B82F6/FFFFFF?text=Movie+Demo",
-      liveLink: "https://example.com",
-      codeLink: "https://github.com/example/movie-app"
+      liveLink: "https://your-movie-app.vercel.app", // Your deployed app
+      codeLink: "https://github.com/yourusername/movie-app" // Your GitHub repo
     },
     {
       id: 2,
       title: "MealMind - Meal Planning App",
       description: "Full-stack meal planning application with React, Vite, and Supabase for personalized recommendations.",
       techStack: ["React", "Vite", "Supabase", "JavaScript"],
-      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4", // Sample video URL
+      // Replace with your actual video: "/videos/mealmind-demo.mp4"
+      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+      // Replace with your actual thumbnail: "/thumbnails/mealmind-thumb.jpg"
       thumbnailUrl: "https://via.placeholder.com/400x250/10B981/FFFFFF?text=MealMind+Demo",
-      liveLink: "https://example.com",
-      codeLink: "https://github.com/example/mealmind"
+      liveLink: "https://your-mealmind-app.vercel.app", // Your deployed app
+      codeLink: "https://github.com/yourusername/mealmind" // Your GitHub repo
     },
     {
       id: 3,
       title: "Portfolio Website",
       description: "Modern, responsive portfolio website built with React and Tailwind CSS.",
       techStack: ["React", "Vite", "Tailwind CSS"],
-      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4", // Sample video URL
+      // Replace with your actual video: "/videos/portfolio-demo.mp4"
+      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+      // Replace with your actual thumbnail: "/thumbnails/portfolio-thumb.jpg"
       thumbnailUrl: "https://via.placeholder.com/400x250/8B5CF6/FFFFFF?text=Portfolio+Demo",
-      liveLink: "https://example.com",
-      codeLink: "https://github.com/example/portfolio"
+      liveLink: "https://your-portfolio.vercel.app", // Your deployed portfolio
+      codeLink: "https://github.com/yourusername/portfolio" // Your GitHub repo
     }
   ];
 
