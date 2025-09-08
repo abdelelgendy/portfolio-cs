@@ -8,7 +8,9 @@ const ProjectCard = ({ project }) => {
       'JavaScript': 'bg-yellow-400 text-black',
       'Tailwind CSS': 'bg-cyan-500 text-white',
       'CSS3': 'bg-blue-600 text-white',
+      'CSS': 'bg-blue-600 text-white',
       'HTML5': 'bg-orange-500 text-white',
+      'HTML': 'bg-orange-500 text-white',
       'Node.js': 'bg-green-600 text-white',
       'Express': 'bg-gray-700 text-white',
       'MongoDB': 'bg-green-500 text-white',
@@ -37,7 +39,12 @@ const ProjectCard = ({ project }) => {
       'Docker': 'bg-blue-600 text-white',
       'AWS': 'bg-orange-500 text-white',
       'Vercel': 'bg-black text-white',
-      'Netlify': 'bg-teal-500 text-white'
+      'Netlify': 'bg-teal-500 text-white',
+      'Stripe': 'bg-indigo-600 text-white',
+      'Razorpay': 'bg-blue-700 text-white',
+      'Cloudinary': 'bg-blue-500 text-white',
+      'JWT': 'bg-gray-800 text-white',
+      'ESLint': 'bg-purple-600 text-white'
     };
     return colors[tech] || 'bg-gray-500 text-white';
   };
