@@ -215,10 +215,20 @@ function App() {
             <a href="mailto:elge8132@mylaurier.ca" className="text-blue-400 hover:text-blue-300">
               📧 Email
             </a>
-            <a href="https://www.linkedin.com/in/abdelrahman-elgendy-cs/" className="text-blue-400 hover:text-blue-300">
+            <a 
+              href="https://www.linkedin.com/in/abdelrahman-elgendy-cs/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300"
+            >
               💼 LinkedIn
             </a>
-            <a href="https://github.com/abdelelgendy" className="text-blue-400 hover:text-blue-300">
+            <a 
+              href="https://github.com/abdelelgendy" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300"
+            >
               💻 GitHub
             </a>
           </div>
