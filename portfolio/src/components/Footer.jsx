@@ -44,7 +44,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Connect With Me</h4>
             <div className="flex space-x-4">
               <a
-                href="https://github.com"
+                href="https://github.com/abdelelgendy"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -55,7 +55,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/abdelrahman-elgendy-cs/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
