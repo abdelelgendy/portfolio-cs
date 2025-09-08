@@ -1,6 +1,47 @@
 import PropTypes from 'prop-types';
 
 const ProjectCard = ({ project }) => {
+  // Tech stack color mapping
+  const getTechColor = (tech) => {
+    const colors = {
+      'React': 'bg-blue-500 text-white',
+      'JavaScript': 'bg-yellow-400 text-black',
+      'Tailwind CSS': 'bg-cyan-500 text-white',
+      'CSS3': 'bg-blue-600 text-white',
+      'HTML5': 'bg-orange-500 text-white',
+      'Node.js': 'bg-green-600 text-white',
+      'Express': 'bg-gray-700 text-white',
+      'MongoDB': 'bg-green-500 text-white',
+      'PostgreSQL': 'bg-blue-700 text-white',
+      'MySQL': 'bg-orange-600 text-white',
+      'Python': 'bg-blue-500 text-yellow-300',
+      'TypeScript': 'bg-blue-600 text-white',
+      'Vue.js': 'bg-green-500 text-white',
+      'Angular': 'bg-red-600 text-white',
+      'Sass': 'bg-pink-500 text-white',
+      'Bootstrap': 'bg-purple-600 text-white',
+      'jQuery': 'bg-blue-400 text-white',
+      'PHP': 'bg-indigo-600 text-white',
+      'Laravel': 'bg-red-500 text-white',
+      'Django': 'bg-green-700 text-white',
+      'Flask': 'bg-gray-800 text-white',
+      'REST API': 'bg-indigo-500 text-white',
+      'GraphQL': 'bg-pink-600 text-white',
+      'Firebase': 'bg-yellow-500 text-black',
+      'Supabase': 'bg-green-400 text-black',
+      'Vite': 'bg-purple-500 text-white',
+      'Webpack': 'bg-blue-400 text-white',
+      'Next.js': 'bg-black text-white',
+      'Nuxt.js': 'bg-green-400 text-black',
+      'Git': 'bg-orange-600 text-white',
+      'Docker': 'bg-blue-600 text-white',
+      'AWS': 'bg-orange-500 text-white',
+      'Vercel': 'bg-black text-white',
+      'Netlify': 'bg-teal-500 text-white'
+    };
+    return colors[tech] || 'bg-gray-500 text-white';
+  };
+
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
       <img 
@@ -22,7 +63,7 @@ const ProjectCard = ({ project }) => {
           {project.techStack.map((tech, index) => (
             <span 
               key={index}
-              className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded"
+              className={`px-3 py-1 text-xs font-medium rounded-full transition-transform hover:scale-105 ${getTechColor(tech)}`}
             >
               {tech}
             </span>
