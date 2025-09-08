@@ -16,8 +16,8 @@ export const projectsData = [
     description: "Full-stack meal planning application with React, Vite, and Supabase for personalized recommendations.",
     image: "https://images.unsplash.com/photo-1547592180-85f173990554?w=400&h=250&fit=crop&auto=format",
     techStack: ["React", "Vite", "Supabase", "JavaScript"],
-    liveLink: "https://example.com",
-    codeLink: "https://github.com/example/mealmind",
+    liveLink: "https://mealmind-abdel.netlify.app/",
+    codeLink: "https://github.com/abdelelgendy/mealmind",
     featured: true
   },
   {

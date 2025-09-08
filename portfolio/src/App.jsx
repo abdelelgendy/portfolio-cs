@@ -1,45 +1,55 @@
 import { useState } from 'react';
+import { projectsData } from './data/portfolioData';
 
 function App() {
-  // Projects data
-  const projects = [
-    {
-      id: 1,
-      title: "React Movie Discovery App",
-      description: "Responsive movie search application using React.js and Tailwind CSS with real-time API integration.",
-      techStack: ["React", "Tailwind CSS", "REST API", "JavaScript"],
-      // Replace with your actual video: "/videos/movie-app-demo.mp4"
-      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
-      // Replace with your actual thumbnail: "/thumbnails/movie-app-thumb.jpg"
-      thumbnailUrl: "https://via.placeholder.com/400x250/3B82F6/FFFFFF?text=Movie+Demo",
-      liveLink: "https://your-movie-app.vercel.app", // Your deployed app
-      codeLink: "https://github.com/yourusername/movie-app" // Your GitHub repo
-    },
-    {
-      id: 2,
-      title: "MealMind - Meal Planning App",
-      description: "Full-stack meal planning application with React, Vite, and Supabase for personalized recommendations.",
-      techStack: ["React", "Vite", "Supabase", "JavaScript"],
-      // Replace with your actual video: "/videos/mealmind-demo.mp4"
-      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
-      // Replace with your actual thumbnail: "/thumbnails/mealmind-thumb.jpg"
-      thumbnailUrl: "https://via.placeholder.com/400x250/10B981/FFFFFF?text=MealMind+Demo",
-      liveLink: "https://your-mealmind-app.vercel.app", // Your deployed app
-      codeLink: "https://github.com/yourusername/mealmind" // Your GitHub repo
-    },
-    {
-      id: 3,
-      title: "Portfolio Website",
-      description: "Modern, responsive portfolio website built with React and Tailwind CSS.",
-      techStack: ["React", "Vite", "Tailwind CSS"],
-      // Replace with your actual video: "/videos/portfolio-demo.mp4"
-      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
-      // Replace with your actual thumbnail: "/thumbnails/portfolio-thumb.jpg"
-      thumbnailUrl: "https://via.placeholder.com/400x250/8B5CF6/FFFFFF?text=Portfolio+Demo",
-      liveLink: "https://your-portfolio.vercel.app", // Your deployed portfolio
-      codeLink: "https://github.com/yourusername/portfolio" // Your GitHub repo
-    }
-  ];
+  // Tech stack color mapping (same as ProjectCard component)
+  const getTechColor = (tech) => {
+    const colors = {
+      'React': 'bg-blue-500 text-white',
+      'JavaScript': 'bg-yellow-400 text-black',
+      'Tailwind CSS': 'bg-cyan-500 text-white',
+      'CSS3': 'bg-blue-600 text-white',
+      'HTML5': 'bg-orange-500 text-white',
+      'Node.js': 'bg-green-600 text-white',
+      'Express': 'bg-gray-700 text-white',
+      'MongoDB': 'bg-green-500 text-white',
+      'PostgreSQL': 'bg-blue-700 text-white',
+      'MySQL': 'bg-orange-600 text-white',
+      'Python': 'bg-blue-500 text-yellow-300',
+      'TypeScript': 'bg-blue-600 text-white',
+      'Vue.js': 'bg-green-500 text-white',
+      'Angular': 'bg-red-600 text-white',
+      'Sass': 'bg-pink-500 text-white',
+      'Bootstrap': 'bg-purple-600 text-white',
+      'jQuery': 'bg-blue-400 text-white',
+      'PHP': 'bg-indigo-600 text-white',
+      'Laravel': 'bg-red-500 text-white',
+      'Django': 'bg-green-700 text-white',
+      'Flask': 'bg-gray-800 text-white',
+      'REST API': 'bg-indigo-500 text-white',
+      'GraphQL': 'bg-pink-600 text-white',
+      'Firebase': 'bg-yellow-500 text-black',
+      'Supabase': 'bg-green-400 text-black',
+      'Vite': 'bg-purple-500 text-white',
+      'Webpack': 'bg-blue-400 text-white',
+      'Next.js': 'bg-black text-white',
+      'Nuxt.js': 'bg-green-400 text-black',
+      'Git': 'bg-orange-600 text-white',
+      'Docker': 'bg-blue-600 text-white',
+      'AWS': 'bg-orange-500 text-white',
+      'Vercel': 'bg-black text-white',
+      'Netlify': 'bg-teal-500 text-white'
+    };
+    return colors[tech] || 'bg-gray-500 text-white';
+  };
+
+  // Enhanced projects data with video functionality
+  const projects = projectsData.map(project => ({
+    ...project,
+    // Replace with your actual video URLs when available
+    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+    thumbnailUrl: project.image
+  }));
 
   // Project Card Component with Video
   const ProjectCard = ({ project }) => {
@@ -98,7 +108,10 @@ function App() {
           <p className="text-gray-300 text-sm mb-4">{project.description}</p>
           <div className="flex flex-wrap gap-2 mb-4">
             {project.techStack.map((tech, index) => (
-              <span key={index} className="px-2 py-1 bg-gray-700 text-gray-300 text-xs rounded">
+              <span 
+                key={index} 
+                className={`px-3 py-1 text-xs font-medium rounded-full transition-transform hover:scale-105 ${getTechColor(tech)}`}
+              >
                 {tech}
               </span>
             ))}
