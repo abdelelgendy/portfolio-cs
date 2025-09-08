@@ -39,13 +39,23 @@ export default function Contact() {
             </div>
             <div className="flex items-center">
               <span className="text-blue-400 mr-3">💼</span>
-              <a href="https://www.linkedin.com/in/abdelrahman-elgendy-cs/" className="text-gray-300 hover:text-blue-400">
+              <a 
+                href="https://www.linkedin.com/in/abdelrahman-elgendy-cs/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-blue-400"
+              >
                 LinkedIn Profile
               </a>
             </div>
             <div className="flex items-center">
               <span className="text-blue-400 mr-3">💻</span>
-              <a href="https://github.com/abdelelgendy" className="text-gray-300 hover:text-blue-400">
+              <a 
+                href="https://github.com/abdelelgendy" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-blue-400"
+              >
                 GitHub Profile
               </a>
             </div>

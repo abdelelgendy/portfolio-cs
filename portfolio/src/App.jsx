@@ -117,10 +117,20 @@ function App() {
             ))}
           </div>
           <div className="flex gap-3">
-            <a href={project.liveLink} className="text-blue-400 hover:text-blue-300 text-sm font-medium">
+            <a 
+              href={project.liveLink} 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 text-sm font-medium"
+            >
               Live Demo
             </a>
-            <a href={project.codeLink} className="text-gray-400 hover:text-gray-300 text-sm font-medium">
+            <a 
+              href={project.codeLink} 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-gray-300 text-sm font-medium"
+            >
               View Code
             </a>
           </div>
