@@ -6,8 +6,8 @@ export const projectsData = [
     description: "A dynamic movie search and discovery platform built with React.js and Tailwind CSS. Features real-time API integration with movie databases, allowing users to search, filter, and explore movies with detailed information, ratings, and trailers. Includes responsive design and smooth user interactions.",
     image: "https://images.unsplash.com/photo-1489599849554-6f1a9d2e8ad3?w=400&h=250&fit=crop&auto=format",
     techStack: ["React", "Tailwind CSS", "REST API", "JavaScript"],
-    liveLink: "https://example.com",
-    codeLink: "https://github.com/example/movie-app",
+    liveLink: "abdels-movie-app2.netlify.app",
+    codeLink: "https://github.com/abdelelgendy/react-Movie-app",
     featured: true
   },
   {
@@ -36,8 +36,8 @@ export const projectsData = [
       "Cloudinary",
       "JWT",
     ],
-    liveLink: "https://example.com", // replace with your deployed link
-    codeLink: "https://github.com/yourusername/ecommerce-project",
+    liveLink: "herself-era.netlify.app", // replace with your deployed link
+    codeLink: "https://github.com/abdelelgendy/Ecommerce-project",
     featured: true,
   },
   {
@@ -46,8 +46,8 @@ export const projectsData = [
     description: "Interactive digital travel diary documenting a 2-month cultural journey through Egypt, Turkey, and Italy. Features 11 detailed destination entries with personal travel experiences, location ratings, photo galleries, and immersive visual storytelling. Built with React and custom CSS3 animations, showcasing responsive design and engaging user interface patterns.",
     image: "https://images.unsplash.com/photo-1539650116574-75c0c6d73d30?w=400&h=250&fit=crop&auto=format",
     techStack: ["React", "Vite", "CSS3", "ESLint"],
-    liveLink: "https://example.com", // replace with your deployed link
-    codeLink: "https://github.com/yourusername/travel-journal",
+    liveLink: "travel-journal-abdel.netlify.app", // replace with your deployed link
+    codeLink: "https://github.com/abdelelgendy/react-project",
     featured: true,
   },
   {
@@ -56,8 +56,8 @@ export const projectsData = [
     description: "Fully interactive BlackJack card game implementation with authentic casino rules and features. Includes intelligent betting system, automatic stand-on-21 logic, chip-locking mechanisms for strategic gameplay, and realistic card animations. Built with vanilla JavaScript, HTML5, and CSS3, demonstrating strong foundational programming skills and game logic implementation.",
     image: "https://images.unsplash.com/photo-1612817159949-195b46d41b54?w=400&h=250&fit=crop&auto=format",
     techStack: ["JavaScript", "HTML", "CSS"],
-    liveLink: "https://example.com", // replace with your deployed link
-    codeLink: "https://github.com/yourusername/blackjack-project",
+    liveLink: "blackjack-app-abdel.netlify.app", // replace with your deployed link
+    codeLink: "hhttps://github.com/abdelelgendy/BlackJack",
     featured: true,
   },
 ];
