@@ -79,65 +79,74 @@ function App() {
     return colors[tech] || 'bg-gray-500 text-white';
   };
 
-  // Enhanced projects data with video functionality
+  // Enhanced projects data with image gallery functionality
   const projects = projectsData.map(project => ({
     ...project,
-    // Replace with your actual video URLs when available
-    videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+    // Use multiple images if available, otherwise fallback to single image
+    images: project.images || [project.image],
     thumbnailUrl: project.image
   }));
 
-  // Project Card Component with Video
+  // Project Card Component with Image Slideshow
   const ProjectCard = ({ project }) => {
-    const [isPlaying, setIsPlaying] = useState(false);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const images = project.images || [project.image];
 
-    const handlePlayClick = () => {
-      setIsPlaying(true);
+    const nextImage = () => {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    };
+
+    const prevImage = () => {
+      setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
     };
 
     return (
       <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 border border-gray-700/50 hover:border-gray-600 transform hover:-translate-y-2 group">
         <div className="relative h-56 bg-gray-900 overflow-hidden">
-          {!isPlaying ? (
-            // Thumbnail with play button
-            <div className="relative w-full h-full">
-              <img 
-                src={project.thumbnailUrl} 
-                alt={`${project.title} thumbnail`}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <button
-                  onClick={handlePlayClick}
-                  className="bg-white/90 hover:bg-white rounded-full p-4 transition-all duration-200 transform hover:scale-110 shadow-xl"
-                >
-                  <svg 
-                    width="28" 
-                    height="28" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    className="text-gray-800"
-                  >
-                    <path 
-                      d="M8 5v14l11-7z" 
-                      fill="currentColor"
-                    />
-                  </svg>
-                </button>
+          {/* Project Image Slideshow */}
+          <img 
+            src={images[currentImageIndex]} 
+            alt={`${project.title} screenshot ${currentImageIndex + 1}`}
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          
+          {/* Slideshow Controls - Only show if multiple images */}
+          {images.length > 1 && (
+            <>
+              {/* Previous Button */}
+              <button
+                onClick={prevImage}
+                className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                </svg>
+              </button>
+              
+              {/* Next Button */}
+              <button
+                onClick={nextImage}
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+                </svg>
+              </button>
+              
+              {/* Image Indicators */}
+              <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {images.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                      index === currentImageIndex ? 'bg-white' : 'bg-white/50'
+                    }`}
+                  />
+                ))}
               </div>
-            </div>
-          ) : (
-            // Video player
-            <video
-              controls
-              autoPlay
-              className="w-full h-full object-cover"
-              onEnded={() => setIsPlaying(false)}
-            >
-              <source src={project.videoUrl} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            </>
           )}
         </div>
         <div className="p-8">

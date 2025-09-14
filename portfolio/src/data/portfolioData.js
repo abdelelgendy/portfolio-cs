@@ -3,8 +3,11 @@ export const projectsData = [
   {
     id: 1,
     title: "🎬 React Movie Discovery App",
-    description: "A dynamic movie search and discovery platform built with React.js and Tailwind CSS. Features real-time API integration with movie databases, allowing users to search, filter, and explore movies with detailed information, ratings, and trailers. Includes responsive design and smooth user interactions.",
-    image: "https://images.unsplash.com/photo-1489599849554-6f1a9d2e8ad3?w=400&h=250&fit=crop&auto=format",
+    description: "A Netflix-inspired movie discovery platform built with React.js and modern design principles. Features comprehensive movie database integration, detailed movie pages with trailers and ratings, responsive grid layouts, and smooth user interactions. Includes movie search, filtering, and detailed information display with professional UI/UX design.",
+    image: "https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=400&h=250&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=400&h=250&fit=crop&auto=format"
+    ],
     techStack: ["React", "Tailwind CSS", "REST API", "JavaScript"],
     liveLink: "https://abdels-movie-app2.netlify.app",
     codeLink: "https://github.com/abdelelgendy/react-Movie-app",
