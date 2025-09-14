@@ -1,8 +1,36 @@
 import { useState } from 'react';
-import { projectsData } from './data/portfolioData';
+import { projectsData, skillsData } from './data/portfolioData';
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Calculate dynamic stats from portfolio data
+  const projectCount = projectsData.length;
+  const allTechStacks = projectsData.flatMap(project => project.techStack);
+  const uniqueTechnologies = [...new Set(allTechStacks)];
+  const technologiesCount = uniqueTechnologies.length;
+  
+  // Calculate years of experience (you can adjust this based on when you started)
+  const startYear = 2023; // Adjust this to when you started coding
+  const currentYear = new Date().getFullYear();
+  const yearsExperience = currentYear - startYear;
+  
+  // Calculate HR-focused stats
+  const reactProjects = projectsData.filter(project => 
+    project.techStack.includes('React')
+  ).length;
+  
+  const fullStackProjects = projectsData.filter(project => 
+    project.techStack.some(tech => ['Express', 'Node.js', 'MongoDB', 'Supabase'].includes(tech))
+  ).length;
+  
+  // Frontend tech stack proficiency
+  const frontendTechs = ['React', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Vite'];
+  const frontendCount = frontendTechs.filter(tech => uniqueTechnologies.includes(tech)).length;
+  
+  // Backend/Database experience
+  const backendTechs = ['Node.js', 'Express', 'MongoDB', 'Supabase', 'REST API'];
+  const backendCount = backendTechs.filter(tech => uniqueTechnologies.includes(tech)).length;
   // Tech stack color mapping (same as ProjectCard component)
   const getTechColor = (tech) => {
     const colors = {
@@ -294,20 +322,32 @@ function App() {
             
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-gray-900/50 p-6 rounded-2xl border border-gray-700/50">
-                <h3 className="text-2xl font-bold text-blue-400 mb-2">5+</h3>
-                <p className="text-gray-300">Projects Completed</p>
+                <h3 className="text-2xl font-bold text-blue-400 mb-2">Frontend Tech Used</h3>
+                <div className="flex flex-wrap gap-2 mb-2">
+                  {frontendTechs.filter(tech => uniqueTechnologies.includes(tech)).map(tech => (
+                    <span key={tech} className="px-2 py-1 text-xs font-semibold rounded bg-blue-700 text-white">{tech}</span>
+                  ))}
+                </div>
+                <p className="text-gray-400 text-xs">({frontendCount} technologies)</p>
               </div>
               <div className="bg-gray-900/50 p-6 rounded-2xl border border-gray-700/50">
-                <h3 className="text-2xl font-bold text-green-400 mb-2">10+</h3>
-                <p className="text-gray-300">Technologies</p>
+                <h3 className="text-2xl font-bold text-green-400 mb-2">Backend Tech Used</h3>
+                <div className="flex flex-wrap gap-2 mb-2">
+                  {backendTechs.filter(tech => uniqueTechnologies.includes(tech)).map(tech => (
+                    <span key={tech} className="px-2 py-1 text-xs font-semibold rounded bg-green-700 text-white">{tech}</span>
+                  ))}
+                </div>
+                <p className="text-gray-400 text-xs">({backendCount} technologies)</p>
               </div>
               <div className="bg-gray-900/50 p-6 rounded-2xl border border-gray-700/50">
-                <h3 className="text-2xl font-bold text-purple-400 mb-2">2+</h3>
-                <p className="text-gray-300">Years Experience</p>
+                <h3 className="text-2xl font-bold text-purple-400 mb-2">React Projects</h3>
+                <p className="text-gray-300 text-lg font-bold">{reactProjects} / {projectCount}</p>
+                <p className="text-gray-400 text-xs mt-1">Built with React.js</p>
               </div>
               <div className="bg-gray-900/50 p-6 rounded-2xl border border-gray-700/50">
-                <h3 className="text-2xl font-bold text-cyan-400 mb-2">100%</h3>
-                <p className="text-gray-300">Dedication</p>
+                <h3 className="text-2xl font-bold text-cyan-400 mb-2">Full-Stack Projects</h3>
+                <p className="text-gray-300 text-lg font-bold">{fullStackProjects}</p>
+                <p className="text-gray-400 text-xs mt-1">End-to-end development</p>
               </div>
             </div>
           </div>
