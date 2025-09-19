@@ -45,6 +45,7 @@ export const createProject = ({
     codeLink,
     featured
   };
+
 };
 
 // Quick project templates
