@@ -1,4 +1,3 @@
-// Sample project data - you can replace with your own projects
 export const projectsData = [
   {
     id: 1,
@@ -33,11 +32,11 @@ export const projectsData = [
       challenges: "The biggest challenge was creating an intelligent recommendation system that considers user preferences, dietary restrictions, and nutritional balance. Solved by implementing a scoring algorithm that weighs multiple factors and learns from user interactions.",
       outcome: "Successfully created a full-stack application that demonstrates database design, user authentication, complex state management, and algorithm implementation. The app shows proficiency in modern React patterns and backend integration."
     },
-    image: "https://images.unsplash.com/photo-1547592180-85f173990554?w=400&h=250&fit=crop&auto=format",
+    image: "/projects/task-manager/meal-dashboard.jpg",
     images: [
-      "https://images.unsplash.com/photo-1547592180-85f173990554?w=600&h=400&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=600&h=400&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&h=400&fit=crop&auto=format"
+      "/projects/task-manager/meal-dashboard.jpg",
+      "/projects/task-manager/meal-planning.jpg",
+      "/projects/task-manager/meal-nutrition.jpg"
     ],
     techStack: ["React", "Vite", "Supabase", "JavaScript"],
     liveLink: "https://mealmind-abdel.netlify.app/",
@@ -55,11 +54,11 @@ export const projectsData = [
       challenges: "The main challenges included implementing secure payment processing, managing complex state for shopping cart functionality, and creating an efficient inventory management system. Solved by implementing proper authentication flows, optimistic UI updates, and real-time inventory tracking.",
       outcome: "Successfully delivered a production-ready e-commerce platform demonstrating full-stack development skills, payment integration expertise, database design, and security best practices. The project showcases ability to handle complex business logic and create scalable applications."
     },
-    image: "https://images.unsplash.com/photo-1607082349566-187342175e2f?w=400&h=250&fit=crop&auto=format",
+    image: "/projects/ecommerce-site/ecommerce-homepage.jpg",
     images: [
-      "https://images.unsplash.com/photo-1607082349566-187342175e2f?w=600&h=400&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop&auto=format"
+      "/projects/ecommerce-site/ecommerce-homepage.jpg",
+      "/projects/ecommerce-site/ecommerce-products.jpg",
+      "/projects/ecommerce-site/ecommerce-cart.jpg"
     ],
     techStack: [
       "React",
@@ -87,11 +86,11 @@ export const projectsData = [
       challenges: "The primary challenge was creating an engaging storytelling interface that could handle rich media content while maintaining fast performance. Solved by implementing lazy loading for images, optimizing animation performance, and creating modular components for different content types.",
       outcome: "Delivered a visually stunning application that demonstrates advanced CSS skills, animation implementation, and storytelling through code. The project showcases ability to create engaging user experiences and handle multimedia content effectively."
     },
-    image: "https://images.unsplash.com/photo-1539650116574-75c0c6d73d30?w=400&h=250&fit=crop&auto=format",
+    image: "/projects/weather-app/travel-homepage.jpg",
     images: [
-      "https://images.unsplash.com/photo-1539650116574-75c0c6d73d30?w=600&h=400&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&h=400&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1571501679680-de32f1e7aad4?w=600&h=400&fit=crop&auto=format"
+      "/projects/weather-app/travel-homepage.jpg",
+      "/projects/weather-app/travel-journal.jpg",
+      "/projects/weather-app/travel-gallery.jpg"
     ],
     techStack: ["React", "Vite", "CSS3", "ESLint"],
     liveLink: "https://travel-journal-abdel.netlify.app",
@@ -109,11 +108,11 @@ export const projectsData = [
       challenges: "The main challenges included implementing authentic casino rules, managing complex game state (deck, hands, betting), and creating smooth animations without external libraries. Solved by breaking down game logic into modular functions, implementing proper state management patterns, and using CSS transforms for performance-optimized animations.",
       outcome: "Successfully created a production-quality game that demonstrates strong foundation in core web technologies. The project proves ability to build complex applications without frameworks and shows mastery of fundamental programming concepts essential for any advanced development work."
     },
-    image: "https://images.unsplash.com/photo-1612817159949-195b46d41b54?w=400&h=250&fit=crop&auto=format",
+    image: "/projects/portfolio-site/blackjack-game.jpg",
     images: [
-      "https://images.unsplash.com/photo-1612817159949-195b46d41b54?w=600&h=400&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1570303342738-a25d0d9b96ba?w=600&h=400&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=600&h=400&fit=crop&auto=format"
+      "/projects/portfolio-site/blackjack-game.jpg",
+      "/projects/portfolio-site/blackjack-playing.jpg",
+      "/projects/portfolio-site/blackjack-rules.jpg"
     ],
     techStack: ["JavaScript", "HTML", "CSS"],
     liveLink: "https://blackjack-app-abdel.netlify.app",
