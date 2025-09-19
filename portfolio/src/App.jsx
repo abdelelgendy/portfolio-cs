@@ -1,11 +1,9 @@
 import { useState } from 'react';
 import { projectsData, skillsData } from './data/portfolioData';
-import { ProjectCard, ProjectModal, ProjectsGrid } from './components/ProjectComponents';
+import { ProjectCard, ProjectsGrid } from './components/ProjectComponents';
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [selectedProject, setSelectedProject] = useState(null);
-  const [modalImageIndex, setModalImageIndex] = useState(0);
 
   // Calculate dynamic stats from portfolio data
   const projectCount = projectsData.length;
@@ -190,157 +188,6 @@ function App() {
             >
               View Code
             </a>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
-  // Project Modal Component
-  const ProjectModal = ({ project, onClose }) => {
-    const [currentImageIndex, setCurrentImageIndex] = useState(modalImageIndex);
-    const images = project.images || [project.image];
-
-    const nextImage = () => {
-      setCurrentImageIndex((prev) => (prev + 1) % images.length);
-    };
-
-    const prevImage = () => {
-      setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
-    };
-
-    const handleBackdropClick = (e) => {
-      if (e.target === e.currentTarget) {
-        onClose();
-      }
-    };
-
-    return (
-      <div 
-        className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4"
-        onClick={handleBackdropClick}
-      >
-        <div className="bg-gray-800 rounded-2xl max-w-4xl max-h-[90vh] overflow-y-auto w-full">
-          {/* Modal Header */}
-          <div className="flex justify-between items-center p-6 border-b border-gray-700">
-            <h2 className="text-2xl font-bold text-white">{project.title}</h2>
-            <button
-              onClick={onClose}
-              className="text-gray-400 hover:text-white text-2xl"
-            >
-              ×
-            </button>
-          </div>
-
-          {/* Image Slideshow */}
-          <div className="relative h-64 md:h-80 bg-gray-900">
-            <img 
-              src={images[currentImageIndex]} 
-              alt={`${project.title} screenshot ${currentImageIndex + 1}`}
-              className="w-full h-full object-cover"
-            />
-            
-            {images.length > 1 && (
-              <>
-                <button
-                  onClick={prevImage}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full"
-                >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-                  </svg>
-                </button>
-                
-                <button
-                  onClick={nextImage}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full"
-                >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
-                  </svg>
-                </button>
-
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                  {images.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentImageIndex(index)}
-                      className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-                        index === currentImageIndex ? 'bg-white' : 'bg-white/50'
-                      }`}
-                    />
-                  ))}
-                </div>
-              </>
-            )}
-          </div>
-
-          {/* Project Details */}
-          <div className="p-6">
-            {/* Tech Stack */}
-            <div className="mb-6">
-              <h3 className="text-lg font-semibold text-white mb-3">Technologies Used</h3>
-              <div className="flex flex-wrap gap-2">
-                {project.techStack.map((tech, index) => (
-                  <span 
-                    key={index} 
-                    className={`px-3 py-1 text-sm font-semibold rounded-full ${getTechColor(tech)}`}
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Detailed Description */}
-            {project.fullDescription && (
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-lg font-semibold text-blue-400 mb-2">Problem Statement</h3>
-                  <p className="text-gray-300 leading-relaxed">{project.fullDescription.problem}</p>
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-semibold text-green-400 mb-2">Solution Approach</h3>
-                  <p className="text-gray-300 leading-relaxed">{project.fullDescription.solution}</p>
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-semibold text-purple-400 mb-2">Technical Implementation</h3>
-                  <p className="text-gray-300 leading-relaxed">{project.fullDescription.techUsed}</p>
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-semibold text-orange-400 mb-2">Challenges & Solutions</h3>
-                  <p className="text-gray-300 leading-relaxed">{project.fullDescription.challenges}</p>
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-semibold text-cyan-400 mb-2">Outcome & Impact</h3>
-                  <p className="text-gray-300 leading-relaxed">{project.fullDescription.outcome}</p>
-                </div>
-              </div>
-            )}
-
-            {/* Action Buttons */}
-            <div className="flex gap-4 mt-8">
-              <a 
-                href={project.liveLink} 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 text-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
-              >
-                View Live Demo
-              </a>
-              <a 
-                href={project.codeLink} 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 text-center border-2 border-gray-600 hover:border-blue-400 hover:bg-gray-700 text-gray-300 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105"
-              >
-                View Source Code
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -540,10 +387,6 @@ function App() {
           {/* Dynamic Projects Grid with Enhanced Components */}
           <ProjectsGrid 
             projects={projectsData}
-            onProjectClick={(project, imageIndex) => {
-              setSelectedProject(project);
-              setModalImageIndex(imageIndex || 0);
-            }}
             getTechColor={getTechColor}
             layout="grid"
             showFeatured={true}
@@ -622,17 +465,6 @@ function App() {
           </div>
         </div>
       </footer>
-
-      {/* Enhanced Project Modal */}
-      {selectedProject && (
-        <ProjectModal 
-          project={selectedProject} 
-          onClose={() => setSelectedProject(null)}
-          initialImageIndex={modalImageIndex}
-          getTechColor={getTechColor}
-          modalVariant="fullscreen"
-        />
-      )}
     </div>
   );
 }
