@@ -26,7 +26,7 @@ const projectConfigs = {
   'movie-app': {
     folder: 'movie-app',
     imageCount: 3,
-    customImages: ['movie-app-1.jpg', 'movie-app-2.png', 'movie-app-3.png']
+    customImages: ['movie-app-homepage.png', 'movie-app-browse.png', 'movie-app-1.png']
   },
   'meal-planning': {
     folder: 'task-manager',

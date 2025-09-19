@@ -201,6 +201,7 @@ export const ProjectModal = ({
   const [currentImageIndex, setCurrentImageIndex] = useState(initialImageIndex);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
+  const [isFullscreenImage, setIsFullscreenImage] = useState(false);
   
   const images = project.images || [project.image];
 
@@ -233,14 +234,21 @@ export const ProjectModal = ({
   // Keyboard navigation
   useState(() => {
     const handleKeyPress = (e) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === 'Escape') {
+        if (isFullscreenImage) {
+          setIsFullscreenImage(false);
+        } else {
+          onClose();
+        }
+      }
       if (e.key === 'ArrowLeft') prevImage();
       if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'f' || e.key === 'F') setIsFullscreenImage(!isFullscreenImage);
     };
 
     document.addEventListener('keydown', handleKeyPress);
     return () => document.removeEventListener('keydown', handleKeyPress);
-  }, []);
+  }, [isFullscreenImage]);
 
   const modalVariants = {
     default: "bg-gray-800 rounded-2xl max-w-4xl max-h-[90vh] overflow-y-auto w-full",
@@ -249,10 +257,112 @@ export const ProjectModal = ({
   };
 
   return (
-    <div 
-      className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4"
-      onClick={handleBackdropClick}
-    >
+    <div>
+      {/* Fullscreen Image Viewer */}
+      {isFullscreenImage && (
+        <div className="fixed inset-0 bg-black z-[60] flex items-center justify-center">
+          {/* Fullscreen Controls */}
+          <div className="absolute top-4 right-4 flex gap-2 z-10">
+            <button
+              onClick={() => setIsFullscreenImage(false)}
+              className="bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-colors duration-200"
+              title="Exit Fullscreen (ESC)"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+              </svg>
+            </button>
+          </div>
+
+          {/* Fullscreen Image */}
+          <div className="relative w-full h-full flex items-center justify-center p-8">
+            {!imageLoaded && !imageError && (
+              <div className="absolute inset-0 bg-black flex items-center justify-center">
+                <div className="text-white text-xl">Loading fullscreen image...</div>
+              </div>
+            )}
+
+            {imageError ? (
+              <div className="text-center text-white">
+                <div className="text-6xl mb-4">🖼️</div>
+                <div className="text-xl">Image not available</div>
+                <div className="text-gray-400 mt-2">{images[currentImageIndex]}</div>
+              </div>
+            ) : (
+              <img 
+                src={images[currentImageIndex]} 
+                alt={`${project.title} screenshot ${currentImageIndex + 1} - Fullscreen`}
+                className={`max-w-full max-h-full object-contain transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                onLoad={handleImageLoad}
+                onError={handleImageError}
+                onClick={() => setIsFullscreenImage(false)}
+              />
+            )}
+
+            {/* Fullscreen Navigation */}
+            {images.length > 1 && (
+              <>
+                <button
+                  onClick={prevImage}
+                  className="absolute left-8 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-4 rounded-full transition-colors duration-200"
+                  title="Previous Image (←)"
+                >
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                  </svg>
+                </button>
+                
+                <button
+                  onClick={nextImage}
+                  className="absolute right-8 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-4 rounded-full transition-colors duration-200"
+                  title="Next Image (→)"
+                >
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+                  </svg>
+                </button>
+
+                {/* Fullscreen Image Indicators */}
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
+                  {images.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => {
+                        setCurrentImageIndex(index);
+                        setImageLoaded(false);
+                      }}
+                      className={`w-4 h-4 rounded-full transition-colors duration-200 ${
+                        index === currentImageIndex ? 'bg-white' : 'bg-white/50'
+                      }`}
+                      title={`Go to image ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
+
+            {/* Image Info */}
+            <div className="absolute bottom-8 right-8 bg-black/50 text-white px-4 py-2 rounded-lg">
+              <div className="text-sm font-medium">{project.title}</div>
+              <div className="text-xs text-gray-300">
+                {currentImageIndex + 1} of {images.length}
+              </div>
+            </div>
+
+            {/* Help Text */}
+            <div className="absolute top-8 left-8 bg-black/50 text-white px-4 py-2 rounded-lg text-sm">
+              Press <kbd className="bg-gray-700 px-2 py-1 rounded">ESC</kbd> to exit • 
+              <kbd className="bg-gray-700 px-2 py-1 rounded ml-1">F</kbd> for fullscreen
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Main Modal */}
+      <div 
+        className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4"
+        onClick={handleBackdropClick}
+      >
       <div className={modalVariants[modalVariant]}>
         {/* Modal Header */}
         <div className="flex justify-between items-center p-6 border-b border-gray-700">
@@ -306,6 +416,17 @@ export const ProjectModal = ({
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+                </svg>
+              </button>
+
+              {/* Fullscreen Button */}
+              <button
+                onClick={() => setIsFullscreenImage(true)}
+                className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-colors duration-200"
+                title="View Fullscreen (F)"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
                 </svg>
               </button>
 
