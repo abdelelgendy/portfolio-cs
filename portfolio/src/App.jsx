@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { projectsData, skillsData } from './data/portfolioData';
+import { ProjectCard, ProjectModal, ProjectsGrid } from './components/ProjectComponents';
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -535,11 +536,18 @@ function App() {
               Here are some of my recent projects showcasing modern web development techniques and creative solutions
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </div>
+          
+          {/* Dynamic Projects Grid with Enhanced Components */}
+          <ProjectsGrid 
+            projects={projectsData}
+            onProjectClick={(project, imageIndex) => {
+              setSelectedProject(project);
+              setModalImageIndex(imageIndex || 0);
+            }}
+            getTechColor={getTechColor}
+            layout="grid"
+            showFeatured={true}
+          />
         </div>
       </section>
       
@@ -615,11 +623,14 @@ function App() {
         </div>
       </footer>
 
-      {/* Project Modal */}
+      {/* Enhanced Project Modal */}
       {selectedProject && (
         <ProjectModal 
           project={selectedProject} 
-          onClose={() => setSelectedProject(null)} 
+          onClose={() => setSelectedProject(null)}
+          initialImageIndex={modalImageIndex}
+          getTechColor={getTechColor}
+          modalVariant="fullscreen"
         />
       )}
     </div>

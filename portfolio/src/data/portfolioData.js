@@ -1,3 +1,68 @@
+// Utility function to generate image paths dynamically
+const generateImagePaths = (projectFolder, imageCount = 3, extensions = ['jpg', 'png']) => {
+  const basePath = `/projects/${projectFolder}`;
+  const images = [];
+  
+  // Generate paths for different naming patterns
+  for (let i = 1; i <= imageCount; i++) {
+    extensions.forEach(ext => {
+      images.push(`${basePath}/${projectFolder}-${i}.${ext}`);
+    });
+  }
+  
+  // Add common naming patterns
+  const commonNames = ['homepage', 'dashboard', 'details', 'features', 'gallery'];
+  commonNames.slice(0, imageCount).forEach(name => {
+    extensions.forEach(ext => {
+      images.push(`${basePath}/${projectFolder}-${name}.${ext}`);
+    });
+  });
+  
+  return images;
+};
+
+// Enhanced project configuration with dynamic image generation
+const projectConfigs = {
+  'movie-app': {
+    folder: 'movie-app',
+    imageCount: 3,
+    customImages: ['movie-app-1.jpg', 'movie-app-2.png', 'movie-app-3.png']
+  },
+  'meal-planning': {
+    folder: 'task-manager',
+    imageCount: 3,
+    customImages: ['meal-dashboard.jpg', 'meal-planning.jpg', 'meal-nutrition.jpg']
+  },
+  'ecommerce': {
+    folder: 'ecommerce-site',
+    imageCount: 3,
+    customImages: ['ecommerce-homepage.jpg', 'ecommerce-products.jpg', 'ecommerce-cart.jpg']
+  },
+  'travel-journal': {
+    folder: 'weather-app',
+    imageCount: 3,
+    customImages: ['travel-homepage.jpg', 'travel-journal.jpg', 'travel-gallery.jpg']
+  },
+  'blackjack': {
+    folder: 'portfolio-site',
+    imageCount: 3,
+    customImages: ['blackjack-game.jpg', 'blackjack-playing.jpg', 'blackjack-rules.jpg']
+  }
+};
+
+// Helper function to get project images
+const getProjectImages = (projectKey) => {
+  const config = projectConfigs[projectKey];
+  if (!config) return [];
+  
+  if (config.customImages) {
+    return config.customImages.map(img => `/projects/${config.folder}/${img}`);
+  }
+  
+  return generateImagePaths(config.folder, config.imageCount);
+};
+
+// Sample project data - you can replace with your own projects
 export const projectsData = [
   {
     id: 1,
@@ -10,12 +75,8 @@ export const projectsData = [
       challenges: "The main challenge was handling large datasets from external APIs while maintaining fast load times. Solved this by implementing pagination, lazy loading for images, and optimizing API calls with debounced search functionality.",
       outcome: "Created a professional-grade application that demonstrates proficiency in API integration, state management, and modern React patterns. The app showcases ability to work with external data sources and create intuitive user interfaces."
     },
-    image: "/projects/movie-app/movie-app-1.jpg",
-    images: [
-      "/projects/movie-app/movie-app-1.jpg",
-      "/projects/movie-app/movie-app-2.png", 
-      "/projects/movie-app/movie-app-3.png"
-    ],
+    image: getProjectImages('movie-app')[0],
+    images: getProjectImages('movie-app'),
     techStack: ["React", "Tailwind CSS", "REST API", "JavaScript"],
     liveLink: "https://abdels-movie-app2.netlify.app",
     codeLink: "https://github.com/abdelelgendy/react-Movie-app",
@@ -32,12 +93,8 @@ export const projectsData = [
       challenges: "The biggest challenge was creating an intelligent recommendation system that considers user preferences, dietary restrictions, and nutritional balance. Solved by implementing a scoring algorithm that weighs multiple factors and learns from user interactions.",
       outcome: "Successfully created a full-stack application that demonstrates database design, user authentication, complex state management, and algorithm implementation. The app shows proficiency in modern React patterns and backend integration."
     },
-    image: "/projects/task-manager/meal-dashboard.jpg",
-    images: [
-      "/projects/task-manager/meal-dashboard.jpg",
-      "/projects/task-manager/meal-planning.jpg",
-      "/projects/task-manager/meal-nutrition.jpg"
-    ],
+    image: getProjectImages('meal-planning')[0],
+    images: getProjectImages('meal-planning'),
     techStack: ["React", "Vite", "Supabase", "JavaScript"],
     liveLink: "https://mealmind-abdel.netlify.app/",
     codeLink: "https://github.com/abdelelgendy/mealmind",
@@ -54,12 +111,8 @@ export const projectsData = [
       challenges: "The main challenges included implementing secure payment processing, managing complex state for shopping cart functionality, and creating an efficient inventory management system. Solved by implementing proper authentication flows, optimistic UI updates, and real-time inventory tracking.",
       outcome: "Successfully delivered a production-ready e-commerce platform demonstrating full-stack development skills, payment integration expertise, database design, and security best practices. The project showcases ability to handle complex business logic and create scalable applications."
     },
-    image: "/projects/ecommerce-site/ecommerce-homepage.jpg",
-    images: [
-      "/projects/ecommerce-site/ecommerce-homepage.jpg",
-      "/projects/ecommerce-site/ecommerce-products.jpg",
-      "/projects/ecommerce-site/ecommerce-cart.jpg"
-    ],
+    image: getProjectImages('ecommerce')[0],
+    images: getProjectImages('ecommerce'),
     techStack: [
       "React",
       "Vite",
@@ -86,12 +139,8 @@ export const projectsData = [
       challenges: "The primary challenge was creating an engaging storytelling interface that could handle rich media content while maintaining fast performance. Solved by implementing lazy loading for images, optimizing animation performance, and creating modular components for different content types.",
       outcome: "Delivered a visually stunning application that demonstrates advanced CSS skills, animation implementation, and storytelling through code. The project showcases ability to create engaging user experiences and handle multimedia content effectively."
     },
-    image: "/projects/weather-app/travel-homepage.jpg",
-    images: [
-      "/projects/weather-app/travel-homepage.jpg",
-      "/projects/weather-app/travel-journal.jpg",
-      "/projects/weather-app/travel-gallery.jpg"
-    ],
+    image: getProjectImages('travel-journal')[0],
+    images: getProjectImages('travel-journal'),
     techStack: ["React", "Vite", "CSS3", "ESLint"],
     liveLink: "https://travel-journal-abdel.netlify.app",
     codeLink: "https://github.com/abdelelgendy/react-project",
@@ -108,12 +157,8 @@ export const projectsData = [
       challenges: "The main challenges included implementing authentic casino rules, managing complex game state (deck, hands, betting), and creating smooth animations without external libraries. Solved by breaking down game logic into modular functions, implementing proper state management patterns, and using CSS transforms for performance-optimized animations.",
       outcome: "Successfully created a production-quality game that demonstrates strong foundation in core web technologies. The project proves ability to build complex applications without frameworks and shows mastery of fundamental programming concepts essential for any advanced development work."
     },
-    image: "/projects/portfolio-site/blackjack-game.jpg",
-    images: [
-      "/projects/portfolio-site/blackjack-game.jpg",
-      "/projects/portfolio-site/blackjack-playing.jpg",
-      "/projects/portfolio-site/blackjack-rules.jpg"
-    ],
+    image: getProjectImages('blackjack')[0],
+    images: getProjectImages('blackjack'),
     techStack: ["JavaScript", "HTML", "CSS"],
     liveLink: "https://blackjack-app-abdel.netlify.app",
     codeLink: "https://github.com/abdelelgendy/BlackJack",
