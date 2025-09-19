@@ -3,10 +3,19 @@ export const projectsData = [
   {
     id: 1,
     title: "🎬 React Movie Discovery App",
-    description: "A Netflix-inspired movie discovery platform built with React.js and modern design principles. Features comprehensive movie database integration, detailed movie pages with trailers and ratings, responsive grid layouts, and smooth user interactions. Includes movie search, filtering, and detailed information display with professional UI/UX design.",
-    image: "https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=400&h=250&fit=crop&auto=format",
+    description: "A Netflix-inspired movie discovery platform that solves the problem of scattered movie information across multiple platforms.",
+    fullDescription: {
+      problem: "Movie enthusiasts often struggle to find comprehensive information about films, including ratings, cast details, and streaming availability, scattered across multiple websites and platforms.",
+      solution: "Built a centralized movie discovery platform that aggregates movie data from multiple APIs, providing users with detailed information, ratings, trailers, and reviews in one seamless interface.",
+      techUsed: "Developed using React.js for dynamic UI components, integrated with The Movie Database (TMDb) API for real-time movie data, implemented responsive design with Tailwind CSS, and added smooth animations for enhanced user experience.",
+      challenges: "The main challenge was handling large datasets from external APIs while maintaining fast load times. Solved this by implementing pagination, lazy loading for images, and optimizing API calls with debounced search functionality.",
+      outcome: "Created a professional-grade application that demonstrates proficiency in API integration, state management, and modern React patterns. The app showcases ability to work with external data sources and create intuitive user interfaces."
+    },
+    image: "/projects/movie-app/movie-app-1.jpg",
     images: [
-      "https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=400&h=250&fit=crop&auto=format"
+      "/projects/movie-app/movie-app-1.jpg",
+      "/projects/movie-app/movie-app-2.png", 
+      "/projects/movie-app/movie-app-3.png"
     ],
     techStack: ["React", "Tailwind CSS", "REST API", "JavaScript"],
     liveLink: "https://abdels-movie-app2.netlify.app",
@@ -16,8 +25,20 @@ export const projectsData = [
   {
     id: 2,
     title: "🍽️ MealMind - Meal Planning App",
-    description: "Comprehensive full-stack meal planning application designed to simplify nutrition management. Built with React, Vite, and Supabase backend, featuring user authentication, personalized meal recommendations, grocery list generation, and nutritional tracking. Helps users plan healthy meals and maintain dietary goals.",
+    description: "An intelligent meal planning solution that addresses the daily struggle of healthy meal preparation and nutrition tracking.",
+    fullDescription: {
+      problem: "Many people struggle with meal planning, leading to poor nutrition choices, food waste, and the stress of deciding what to eat daily. Existing solutions were either too complex or lacked personalization.",
+      solution: "Developed MealMind, a comprehensive meal planning application that provides personalized meal recommendations, generates shopping lists, and tracks nutritional goals based on user preferences and dietary restrictions.",
+      techUsed: "Built with React and Vite for fast development and optimal performance, integrated Supabase for real-time database management and user authentication, implemented responsive design for mobile-first experience, and created custom algorithms for meal recommendation logic.",
+      challenges: "The biggest challenge was creating an intelligent recommendation system that considers user preferences, dietary restrictions, and nutritional balance. Solved by implementing a scoring algorithm that weighs multiple factors and learns from user interactions.",
+      outcome: "Successfully created a full-stack application that demonstrates database design, user authentication, complex state management, and algorithm implementation. The app shows proficiency in modern React patterns and backend integration."
+    },
     image: "https://images.unsplash.com/photo-1547592180-85f173990554?w=400&h=250&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1547592180-85f173990554?w=600&h=400&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=600&h=400&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&h=400&fit=crop&auto=format"
+    ],
     techStack: ["React", "Vite", "Supabase", "JavaScript"],
     liveLink: "https://mealmind-abdel.netlify.app/",
     codeLink: "https://github.com/abdelelgendy/mealmind",
@@ -26,8 +47,20 @@ export const projectsData = [
   {
     id: 3,
     title: "🛒 E-commerce Platform",
-    description: "Robust full-stack e-commerce solution with complete shopping functionality. Features secure user authentication, dynamic product catalog, shopping cart management, integrated payment processing (Stripe & Razorpay), cloud-based image uploads via Cloudinary, and JWT-based security. Includes admin dashboard for inventory and order management.",
+    description: "A complete e-commerce solution that solves the complexity of online retail for small to medium businesses.",
+    fullDescription: {
+      problem: "Small businesses often struggle with expensive e-commerce platforms that lack customization or are too complex to manage. They need affordable, scalable solutions with essential features like inventory management, secure payments, and admin controls.",
+      solution: "Built a full-stack e-commerce platform from scratch with complete shopping functionality, secure payment processing, inventory management, and an intuitive admin dashboard for business owners to manage their online store effectively.",
+      techUsed: "Developed using the MERN stack (MongoDB, Express.js, React, Node.js) for full-stack JavaScript development, integrated Stripe and Razorpay for secure payment processing, implemented Cloudinary for optimized image management, used JWT for secure authentication, and designed responsive UI with Tailwind CSS.",
+      challenges: "The main challenges included implementing secure payment processing, managing complex state for shopping cart functionality, and creating an efficient inventory management system. Solved by implementing proper authentication flows, optimistic UI updates, and real-time inventory tracking.",
+      outcome: "Successfully delivered a production-ready e-commerce platform demonstrating full-stack development skills, payment integration expertise, database design, and security best practices. The project showcases ability to handle complex business logic and create scalable applications."
+    },
     image: "https://images.unsplash.com/photo-1607082349566-187342175e2f?w=400&h=250&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1607082349566-187342175e2f?w=600&h=400&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop&auto=format"
+    ],
     techStack: [
       "React",
       "Vite",
@@ -39,27 +72,51 @@ export const projectsData = [
       "Cloudinary",
       "JWT",
     ],
-    liveLink: "https://herself-era.netlify.app", // replace with your deployed link
+    liveLink: "https://herself-era.netlify.app",
     codeLink: "https://github.com/abdelelgendy/Ecommerce-project",
     featured: true,
   },
   {
     id: 4,
     title: "🌊 Mediterranean & Middle Eastern Travel Journal",
-    description: "Interactive digital travel diary documenting a 2-month cultural journey through Egypt, Turkey, and Italy. Features 11 detailed destination entries with personal travel experiences, location ratings, photo galleries, and immersive visual storytelling. Built with React and custom CSS3 animations, showcasing responsive design and engaging user interface patterns.",
+    description: "A digital storytelling platform that preserves and shares cultural travel experiences through interactive journaling.",
+    fullDescription: {
+      problem: "Traditional travel documentation often fails to capture the emotional depth and cultural nuances of travel experiences. Social media posts are fleeting, and written journals lack visual storytelling capabilities for sharing meaningful travel memories.",
+      solution: "Created an interactive digital travel journal that combines visual storytelling with detailed cultural insights, allowing travelers to document, preserve, and share their journeys in an engaging, narrative-driven format with location-based entries and immersive photo galleries.",
+      techUsed: "Built with React for component-based architecture, implemented custom CSS3 animations for smooth user interactions, used Vite for optimized development workflow, integrated ESLint for code quality, and designed responsive layouts that work seamlessly across devices.",
+      challenges: "The primary challenge was creating an engaging storytelling interface that could handle rich media content while maintaining fast performance. Solved by implementing lazy loading for images, optimizing animation performance, and creating modular components for different content types.",
+      outcome: "Delivered a visually stunning application that demonstrates advanced CSS skills, animation implementation, and storytelling through code. The project showcases ability to create engaging user experiences and handle multimedia content effectively."
+    },
     image: "https://images.unsplash.com/photo-1539650116574-75c0c6d73d30?w=400&h=250&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1539650116574-75c0c6d73d30?w=600&h=400&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&h=400&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1571501679680-de32f1e7aad4?w=600&h=400&fit=crop&auto=format"
+    ],
     techStack: ["React", "Vite", "CSS3", "ESLint"],
-    liveLink: "https://travel-journal-abdel.netlify.app", // replace with your deployed link
+    liveLink: "https://travel-journal-abdel.netlify.app",
     codeLink: "https://github.com/abdelelgendy/react-project",
     featured: true,
   },
   {
     id: 5,
     title: "♠️ BlackJack Game",
-    description: "Fully interactive BlackJack card game implementation with authentic casino rules and features. Includes intelligent betting system, automatic stand-on-21 logic, chip-locking mechanisms for strategic gameplay, and realistic card animations. Built with vanilla JavaScript, HTML5, and CSS3, demonstrating strong foundational programming skills and game logic implementation.",
+    description: "A web-based casino game that demonstrates vanilla JavaScript mastery and game logic implementation.",
+    fullDescription: {
+      problem: "Learning fundamental programming concepts like game logic, state management, and DOM manipulation can be abstract and difficult to grasp without practical application. Many developers struggle with vanilla JavaScript after becoming dependent on frameworks.",
+      solution: "Developed a fully functional BlackJack game using only vanilla JavaScript, HTML, and CSS to demonstrate mastery of core web development fundamentals, including complex game logic, DOM manipulation, and event handling without framework dependencies.",
+      techUsed: "Built entirely with vanilla JavaScript for game logic and state management, HTML5 for semantic structure and accessibility, CSS3 for styling and card animations, implemented object-oriented programming principles, and created responsive design for cross-device compatibility.",
+      challenges: "The main challenges included implementing authentic casino rules, managing complex game state (deck, hands, betting), and creating smooth animations without external libraries. Solved by breaking down game logic into modular functions, implementing proper state management patterns, and using CSS transforms for performance-optimized animations.",
+      outcome: "Successfully created a production-quality game that demonstrates strong foundation in core web technologies. The project proves ability to build complex applications without frameworks and shows mastery of fundamental programming concepts essential for any advanced development work."
+    },
     image: "https://images.unsplash.com/photo-1612817159949-195b46d41b54?w=400&h=250&fit=crop&auto=format",
+    images: [
+      "https://images.unsplash.com/photo-1612817159949-195b46d41b54?w=600&h=400&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1570303342738-a25d0d9b96ba?w=600&h=400&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=600&h=400&fit=crop&auto=format"
+    ],
     techStack: ["JavaScript", "HTML", "CSS"],
-    liveLink: "https://blackjack-app-abdel.netlify.app", // replace with your deployed link
+    liveLink: "https://blackjack-app-abdel.netlify.app",
     codeLink: "https://github.com/abdelelgendy/BlackJack",
     featured: true,
   },
