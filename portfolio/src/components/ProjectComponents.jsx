@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // Enhanced Project Card Component with better props handling
 export const ProjectCard = ({ 
@@ -232,7 +232,7 @@ export const ProjectModal = ({
   };
 
   // Keyboard navigation
-  useState(() => {
+  useEffect(() => {
     const handleKeyPress = (e) => {
       if (e.key === 'Escape') {
         if (isFullscreenImage) {
@@ -257,7 +257,7 @@ export const ProjectModal = ({
   };
 
   return (
-    <div>
+    <>
       {/* Fullscreen Image Viewer */}
       {isFullscreenImage && (
         <div className="fixed inset-0 bg-black z-[60] flex items-center justify-center">
@@ -292,7 +292,7 @@ export const ProjectModal = ({
               <img 
                 src={images[currentImageIndex]} 
                 alt={`${project.title} screenshot ${currentImageIndex + 1} - Fullscreen`}
-                className={`max-w-full max-h-full object-contain transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                className={`max-w-full max-h-full object-contain transition-opacity duration-300 cursor-pointer ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
                 onLoad={handleImageLoad}
                 onError={handleImageError}
                 onClick={() => setIsFullscreenImage(false)}
@@ -363,160 +363,161 @@ export const ProjectModal = ({
         className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4"
         onClick={handleBackdropClick}
       >
-      <div className={modalVariants[modalVariant]}>
-        {/* Modal Header */}
-        <div className="flex justify-between items-center p-6 border-b border-gray-700">
-          <h2 className="text-2xl font-bold text-white">{project.title}</h2>
-          <button
-            onClick={onClose}
-            className="text-gray-400 hover:text-white text-2xl transition-colors duration-200"
-          >
-            ×
-          </button>
-        </div>
-
-        {/* Image Slideshow */}
-        <div className="relative h-64 md:h-80 bg-gray-900">
-          {!imageLoaded && !imageError && (
-            <div className="absolute inset-0 bg-gray-700 animate-pulse flex items-center justify-center">
-              <div className="text-gray-400">Loading image...</div>
-            </div>
-          )}
-
-          {imageError ? (
-            <div className="absolute inset-0 bg-gray-700 flex items-center justify-center flex-col">
-              <div className="text-6xl mb-4">🖼️</div>
-              <div className="text-gray-400">Image not available</div>
-              <div className="text-gray-500 text-sm mt-2">{images[currentImageIndex]}</div>
-            </div>
-          ) : (
-            <img 
-              src={images[currentImageIndex]} 
-              alt={`${project.title} screenshot ${currentImageIndex + 1}`}
-              className={`w-full h-full object-cover transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-              onLoad={handleImageLoad}
-              onError={handleImageError}
-            />
-          )}
-          
-          {images.length > 1 && (
-            <>
-              <button
-                onClick={prevImage}
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-colors duration-200"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-                </svg>
-              </button>
-              
-              <button
-                onClick={nextImage}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-colors duration-200"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
-                </svg>
-              </button>
-
-              {/* Fullscreen Button */}
-              <button
-                onClick={() => setIsFullscreenImage(true)}
-                className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-colors duration-200"
-                title="View Fullscreen (F)"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
-                </svg>
-              </button>
-
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                {images.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => {
-                      setCurrentImageIndex(index);
-                      setImageLoaded(false);
-                    }}
-                    className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-                      index === currentImageIndex ? 'bg-white' : 'bg-white/50'
-                    }`}
-                  />
-                ))}
-              </div>
-            </>
-          )}
-        </div>
-
-        {/* Project Details */}
-        <div className="p-6">
-          {/* Tech Stack */}
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold text-white mb-3">Technologies Used</h3>
-            <div className="flex flex-wrap gap-2">
-              {project.techStack.map((tech, index) => (
-                <span 
-                  key={index} 
-                  className={`px-3 py-1 text-sm font-semibold rounded-full ${getTechColor(tech)}`}
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
+        <div className={modalVariants[modalVariant]}>
+          {/* Modal Header */}
+          <div className="flex justify-between items-center p-6 border-b border-gray-700">
+            <h2 className="text-2xl font-bold text-white">{project.title}</h2>
+            <button
+              onClick={onClose}
+              className="text-gray-400 hover:text-white text-2xl transition-colors duration-200"
+            >
+              ×
+            </button>
           </div>
 
-          {/* Detailed Description */}
-          {project.fullDescription && (
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-lg font-semibold text-blue-400 mb-2">Problem Statement</h3>
-                <p className="text-gray-300 leading-relaxed">{project.fullDescription.problem}</p>
+          {/* Image Slideshow */}
+          <div className="relative h-64 md:h-80 bg-gray-900">
+            {!imageLoaded && !imageError && (
+              <div className="absolute inset-0 bg-gray-700 animate-pulse flex items-center justify-center">
+                <div className="text-gray-400">Loading image...</div>
               </div>
+            )}
 
-              <div>
-                <h3 className="text-lg font-semibold text-green-400 mb-2">Solution Approach</h3>
-                <p className="text-gray-300 leading-relaxed">{project.fullDescription.solution}</p>
+            {imageError ? (
+              <div className="absolute inset-0 bg-gray-700 flex items-center justify-center flex-col">
+                <div className="text-6xl mb-4">🖼️</div>
+                <div className="text-gray-400">Image not available</div>
+                <div className="text-gray-500 text-sm mt-2">{images[currentImageIndex]}</div>
               </div>
+            ) : (
+              <img 
+                src={images[currentImageIndex]} 
+                alt={`${project.title} screenshot ${currentImageIndex + 1}`}
+                className={`w-full h-full object-cover transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                onLoad={handleImageLoad}
+                onError={handleImageError}
+              />
+            )}
+            
+            {images.length > 1 && (
+              <>
+                <button
+                  onClick={prevImage}
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-colors duration-200"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                  </svg>
+                </button>
+                
+                <button
+                  onClick={nextImage}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-colors duration-200"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+                  </svg>
+                </button>
 
-              <div>
-                <h3 className="text-lg font-semibold text-purple-400 mb-2">Technical Implementation</h3>
-                <p className="text-gray-300 leading-relaxed">{project.fullDescription.techUsed}</p>
-              </div>
+                {/* Fullscreen Button */}
+                <button
+                  onClick={() => setIsFullscreenImage(true)}
+                  className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-colors duration-200"
+                  title="View Fullscreen (F)"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+                  </svg>
+                </button>
 
-              <div>
-                <h3 className="text-lg font-semibold text-orange-400 mb-2">Challenges & Solutions</h3>
-                <p className="text-gray-300 leading-relaxed">{project.fullDescription.challenges}</p>
-              </div>
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                  {images.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => {
+                        setCurrentImageIndex(index);
+                        setImageLoaded(false);
+                      }}
+                      className={`w-3 h-3 rounded-full transition-colors duration-200 ${
+                        index === currentImageIndex ? 'bg-white' : 'bg-white/50'
+                      }`}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
 
-              <div>
-                <h3 className="text-lg font-semibold text-cyan-400 mb-2">Outcome & Impact</h3>
-                <p className="text-gray-300 leading-relaxed">{project.fullDescription.outcome}</p>
+          {/* Project Details */}
+          <div className="p-6">
+            {/* Tech Stack */}
+            <div className="mb-6">
+              <h3 className="text-lg font-semibold text-white mb-3">Technologies Used</h3>
+              <div className="flex flex-wrap gap-2">
+                {project.techStack.map((tech, index) => (
+                  <span 
+                    key={index} 
+                    className={`px-3 py-1 text-sm font-semibold rounded-full ${getTechColor(tech)}`}
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
-          )}
 
-          {/* Action Buttons */}
-          <div className="flex gap-4 mt-8">
-            <a 
-              href={project.liveLink} 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 text-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
-            >
-              View Live Demo
-            </a>
-            <a 
-              href={project.codeLink} 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 text-center border-2 border-gray-600 hover:border-blue-400 hover:bg-gray-700 text-gray-300 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105"
-            >
-              View Source Code
-            </a>
+            {/* Detailed Description */}
+            {project.fullDescription && (
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-lg font-semibold text-blue-400 mb-2">Problem Statement</h3>
+                  <p className="text-gray-300 leading-relaxed">{project.fullDescription.problem}</p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold text-green-400 mb-2">Solution Approach</h3>
+                  <p className="text-gray-300 leading-relaxed">{project.fullDescription.solution}</p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold text-purple-400 mb-2">Technical Implementation</h3>
+                  <p className="text-gray-300 leading-relaxed">{project.fullDescription.techUsed}</p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold text-orange-400 mb-2">Challenges & Solutions</h3>
+                  <p className="text-gray-300 leading-relaxed">{project.fullDescription.challenges}</p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold text-cyan-400 mb-2">Outcome & Impact</h3>
+                  <p className="text-gray-300 leading-relaxed">{project.fullDescription.outcome}</p>
+                </div>
+              </div>
+            )}
+
+            {/* Action Buttons */}
+            <div className="flex gap-4 mt-8">
+              <a 
+                href={project.liveLink} 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 text-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                View Live Demo
+              </a>
+              <a 
+                href={project.codeLink} 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 text-center border-2 border-gray-600 hover:border-blue-400 hover:bg-gray-700 text-gray-300 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105"
+              >
+                View Source Code
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
