@@ -29,9 +29,9 @@ const projectConfigs = {
     customImages: ['movie-app-homepage.png', 'movie-app-browse.png', 'movie-app-1.png']
   },
   'meal-planning': {
-    folder: 'task-manager',
-    imageCount: 3,
-    customImages: ['meal-dashboard.jpg', 'meal-planning.jpg', 'meal-nutrition.jpg']
+    folder: 'meal-mind',
+    imageCount: 6,
+    customImages: ['Homepage.png', 'plan.png', 'pantry.png', 'recipes.png', 'profile.png', 'pantry2.png']
   },
   'ecommerce': {
     folder: 'ecommerce-site',

@@ -219,122 +219,197 @@ export const ProjectCard = ({
             onClick={closeDetailsPanel}
           />
           
-          {/* Slide-out Panel */}
-          <div className="ml-auto w-full max-w-2xl bg-gray-900 shadow-2xl transform transition-transform duration-300 ease-out translate-x-0">
-            <div className="h-full flex flex-col">
-              {/* Panel Header */}
-              <div className="flex items-center justify-between p-6 border-b border-gray-700 bg-gradient-to-r from-gray-800 to-gray-900">
-                <div>
-                  <h2 className="text-2xl font-bold text-white">{project.title}</h2>
-                  <p className="text-gray-400 mt-1">Project Details & Analysis</p>
-                </div>
-                <button
-                  onClick={closeDetailsPanel}
-                  className="p-2 text-gray-400 hover:text-white hover:bg-gray-700 rounded-lg transition-all duration-200"
-                >
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-                  </svg>
-                </button>
-              </div>
-
-              {/* Panel Content */}
-              <div className="flex-1 overflow-y-auto p-6 space-y-6">
-                {/* Problem Statement */}
-                <div className="bg-gradient-to-br from-red-500/10 to-pink-500/10 border-l-4 border-red-400 rounded-r-xl p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center">
-                      <span className="text-white text-sm">⚡</span>
+          {/* Slide-out Panel - Full Width */}
+          <div className="ml-auto w-full bg-gray-900 shadow-2xl transform transition-transform duration-300 ease-out translate-x-0">
+            <div className="h-full flex">
+              {/* Left Side - Full Size Images */}
+              <div className="w-1/2 bg-gray-900/20 backdrop-blur-xl flex flex-col">
+                {/* Image Header */}
+                <div className="p-4 border-b border-white/10 bg-black/20 backdrop-blur-sm">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-white font-semibold">Project Gallery</h3>
+                    <div className="text-gray-300 text-sm">
+                      {currentImageIndex + 1} / {images.length}
                     </div>
-                    <h3 className="text-red-400 font-bold text-lg">Problem Statement</h3>
                   </div>
-                  <p className="text-gray-300 leading-relaxed">{project.fullDescription.problem}</p>
                 </div>
-
-                {/* Solution Approach */}
-                <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 border-l-4 border-green-400 rounded-r-xl p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
-                      <span className="text-white text-sm">💡</span>
-                    </div>
-                    <h3 className="text-green-400 font-bold text-lg">Solution Approach</h3>
-                  </div>
-                  <p className="text-gray-300 leading-relaxed">{project.fullDescription.solution}</p>
-                </div>
-
-                {/* Technical Implementation */}
-                <div className="bg-gradient-to-br from-purple-500/10 to-violet-500/10 border-l-4 border-purple-400 rounded-r-xl p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
-                      <span className="text-white text-sm">⚙️</span>
-                    </div>
-                    <h3 className="text-purple-400 font-bold text-lg">Technical Implementation</h3>
-                  </div>
-                  <p className="text-gray-300 leading-relaxed">{project.fullDescription.techUsed}</p>
-                </div>
-
-                {/* Challenges & Solutions */}
-                <div className="bg-gradient-to-br from-orange-500/10 to-amber-500/10 border-l-4 border-orange-400 rounded-r-xl p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
-                      <span className="text-white text-sm">🔧</span>
-                    </div>
-                    <h3 className="text-orange-400 font-bold text-lg">Challenges & Solutions</h3>
-                  </div>
-                  <p className="text-gray-300 leading-relaxed">{project.fullDescription.challenges}</p>
-                </div>
-
-                {/* Outcome & Impact */}
-                <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border-l-4 border-cyan-400 rounded-r-xl p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-8 h-8 bg-cyan-500 rounded-lg flex items-center justify-center">
-                      <span className="text-white text-sm">🎯</span>
-                    </div>
-                    <h3 className="text-cyan-400 font-bold text-lg">Outcome & Impact</h3>
-                  </div>
-                  <p className="text-gray-300 leading-relaxed">{project.fullDescription.outcome}</p>
-                </div>
-
-                {/* Complete Tech Stack */}
-                <div className="bg-gradient-to-br from-yellow-500/10 to-amber-500/10 border-l-4 border-yellow-400 rounded-r-xl p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center">
-                      <span className="text-white text-sm">🛠️</span>
-                    </div>
-                    <h3 className="text-yellow-400 font-bold text-lg">Technologies Used</h3>
-                  </div>
-                  <div className="flex flex-wrap gap-3">
-                    {project.techStack.map((tech, index) => (
-                      <span 
-                        key={index} 
-                        className={`px-4 py-2 text-sm font-semibold rounded-lg transition-transform duration-200 hover:scale-105 ${getTechColor(tech)}`}
+                
+                {/* Full Size Image Display */}
+                <div className="flex-1 relative bg-transparent backdrop-blur-sm">
+                  <img 
+                    src={images[currentImageIndex]} 
+                    alt={`${project.title} screenshot ${currentImageIndex + 1}`}
+                    className="w-full h-full object-contain"
+                  />
+                  
+                  {/* Image Navigation Controls */}
+                  {images.length > 1 && (
+                    <>
+                      <button
+                        onClick={prevImage}
+                        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 backdrop-blur-md text-white p-3 rounded-full transition-all duration-200 border border-white/20"
                       >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                        </svg>
+                      </button>
+                      
+                      <button
+                        onClick={nextImage}
+                        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 backdrop-blur-md text-white p-3 rounded-full transition-all duration-200 border border-white/20"
+                      >
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+                        </svg>
+                      </button>
+                    </>
+                  )}
                 </div>
+                
+                {/* Image Thumbnails */}
+                {images.length > 1 && (
+                  <div className="p-4 bg-black/20 backdrop-blur-md border-t border-white/10">
+                    <div className="flex gap-2 overflow-x-auto">
+                      {images.map((image, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentImageIndex(index)}
+                          className={`flex-shrink-0 w-16 h-12 rounded-lg overflow-hidden border-2 transition-all duration-200 backdrop-blur-sm ${
+                            index === currentImageIndex 
+                              ? 'border-blue-400/80 opacity-100 shadow-lg shadow-blue-400/20' 
+                              : 'border-white/20 opacity-70 hover:opacity-100 hover:border-white/40'
+                          }`}
+                        >
+                          <img 
+                            src={image} 
+                            alt={`Thumbnail ${index + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
 
-              {/* Panel Footer with Actions */}
-              <div className="p-6 border-t border-gray-700 bg-gray-800/50">
-                <div className="flex gap-4">
-                  <a 
-                    href={project.liveLink} 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 text-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+              {/* Right Side - Project Details */}
+              <div className="w-1/2 flex flex-col">
+                {/* Panel Header */}
+                <div className="flex items-center justify-between p-6 border-b border-gray-700 bg-gradient-to-r from-gray-800 to-gray-900">
+                  <div>
+                    <h2 className="text-2xl font-bold text-white">{project.title}</h2>
+                    <p className="text-gray-400 mt-1">Project Details & Analysis</p>
+                  </div>
+                  <button
+                    onClick={closeDetailsPanel}
+                    className="p-2 text-gray-400 hover:text-white hover:bg-gray-700 rounded-lg transition-all duration-200"
                   >
-                    🌐 View Live Demo
-                  </a>
-                  <a 
-                    href={project.codeLink} 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 text-center border-2 border-gray-600 hover:border-blue-400 hover:bg-gray-700 text-gray-300 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105"
-                  >
-                    💻 View Source Code
-                  </a>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                    </svg>
+                  </button>
+                </div>
+
+                {/* Panel Content */}
+                <div className="flex-1 overflow-y-auto project-details-scroll" style={{ padding: '1.5rem', paddingRight: '1rem' }}>
+                  <div className="space-y-6 pr-4">
+                    {/* Problem Statement */}
+                  <div className="bg-gradient-to-br from-red-500/10 to-pink-500/10 border-l-4 border-red-400 rounded-r-xl p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center">
+                        <span className="text-white text-sm">⚡</span>
+                      </div>
+                      <h3 className="text-red-400 font-bold text-lg">Problem Statement</h3>
+                    </div>
+                    <p className="text-gray-300 leading-relaxed">{project.fullDescription.problem}</p>
+                  </div>
+
+                  {/* Solution Approach */}
+                  <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 border-l-4 border-green-400 rounded-r-xl p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+                        <span className="text-white text-sm">💡</span>
+                      </div>
+                      <h3 className="text-green-400 font-bold text-lg">Solution Approach</h3>
+                    </div>
+                    <p className="text-gray-300 leading-relaxed">{project.fullDescription.solution}</p>
+                  </div>
+
+                  {/* Technical Implementation */}
+                  <div className="bg-gradient-to-br from-purple-500/10 to-violet-500/10 border-l-4 border-purple-400 rounded-r-xl p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
+                        <span className="text-white text-sm">⚙️</span>
+                      </div>
+                      <h3 className="text-purple-400 font-bold text-lg">Technical Implementation</h3>
+                    </div>
+                    <p className="text-gray-300 leading-relaxed">{project.fullDescription.techUsed}</p>
+                  </div>
+
+                  {/* Challenges & Solutions */}
+                  <div className="bg-gradient-to-br from-orange-500/10 to-amber-500/10 border-l-4 border-orange-400 rounded-r-xl p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
+                        <span className="text-white text-sm">🔧</span>
+                      </div>
+                      <h3 className="text-orange-400 font-bold text-lg">Challenges & Solutions</h3>
+                    </div>
+                    <p className="text-gray-300 leading-relaxed">{project.fullDescription.challenges}</p>
+                  </div>
+
+                  {/* Outcome & Impact */}
+                  <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border-l-4 border-cyan-400 rounded-r-xl p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-8 h-8 bg-cyan-500 rounded-lg flex items-center justify-center">
+                        <span className="text-white text-sm">🎯</span>
+                      </div>
+                      <h3 className="text-cyan-400 font-bold text-lg">Outcome & Impact</h3>
+                    </div>
+                    <p className="text-gray-300 leading-relaxed">{project.fullDescription.outcome}</p>
+                  </div>
+
+                  {/* Complete Tech Stack */}
+                  <div className="bg-gradient-to-br from-yellow-500/10 to-amber-500/10 border-l-4 border-yellow-400 rounded-r-xl p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center">
+                        <span className="text-white text-sm">🛠️</span>
+                      </div>
+                      <h3 className="text-yellow-400 font-bold text-lg">Technologies Used</h3>
+                    </div>
+                    <div className="flex flex-wrap gap-3">
+                      {project.techStack.map((tech, index) => (
+                        <span 
+                          key={index} 
+                          className={`px-4 py-2 text-sm font-semibold rounded-lg transition-transform duration-200 hover:scale-105 ${getTechColor(tech)}`}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  </div>
+                </div>
+
+                {/* Panel Footer with Actions */}
+                <div className="p-6 border-t border-gray-700 bg-gray-800/50">
+                  <div className="flex gap-4">
+                    <a 
+                      href={project.liveLink} 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 text-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+                    >
+                      🌐 View Live Demo
+                    </a>
+                    <a 
+                      href={project.codeLink} 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 text-center border-2 border-gray-600 hover:border-blue-400 hover:bg-gray-700 text-gray-300 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105"
+                    >
+                      💻 View Source Code
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
