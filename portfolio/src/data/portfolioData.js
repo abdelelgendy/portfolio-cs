@@ -25,8 +25,8 @@ const generateImagePaths = (projectFolder, imageCount = 3, extensions = ['jpg', 
 const projectConfigs = {
   'movie-app': {
     folder: 'movie-app',
-    imageCount: 3,
-    customImages: ['movie-app-homepage.png', 'movie-app-browse.png', 'movie-app-1.png']
+    imageCount: 4,
+    customImages: ['app.png', 'movie-app-1.png', 'movie-app-2.png', 'movie-app-3.png']
   },
   'meal-planning': {
     folder: 'meal-mind',

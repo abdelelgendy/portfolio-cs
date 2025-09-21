@@ -223,7 +223,7 @@ export const ProjectCard = ({
           <div className="ml-auto w-full bg-gray-900 shadow-2xl transform transition-transform duration-300 ease-out translate-x-0">
             <div className="h-full flex">
               {/* Left Side - Full Size Images */}
-              <div className="w-1/2 bg-gray-900/20 backdrop-blur-xl flex flex-col">
+              <div className="w-1/2 bg-gray-900/20 backdrop-blur-xl flex flex-col relative">
                 {/* Image Header */}
                 <div className="p-4 border-b border-white/10 bg-black/20 backdrop-blur-sm">
                   <div className="flex items-center justify-between">
@@ -241,30 +241,32 @@ export const ProjectCard = ({
                     alt={`${project.title} screenshot ${currentImageIndex + 1}`}
                     className="w-full h-full object-contain"
                   />
-                  
-                  {/* Image Navigation Controls */}
-                  {images.length > 1 && (
-                    <>
-                      <button
-                        onClick={prevImage}
-                        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 backdrop-blur-md text-white p-3 rounded-full transition-all duration-200 border border-white/20"
-                      >
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-                        </svg>
-                      </button>
-                      
-                      <button
-                        onClick={nextImage}
-                        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 backdrop-blur-md text-white p-3 rounded-full transition-all duration-200 border border-white/20"
-                      >
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
-                        </svg>
-                      </button>
-                    </>
-                  )}
                 </div>
+                
+                {/* Fixed Navigation Controls - Positioned relative to left panel */}
+                {images.length > 1 && (
+                  <>
+                    {/* Left Arrow - Fixed position in left panel */}
+                    <button
+                      onClick={prevImage}
+                      className="absolute left-6 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/60 backdrop-blur-md text-white p-4 rounded-full transition-all duration-200 border border-white/30 z-30 shadow-lg"
+                    >
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                      </svg>
+                    </button>
+                    
+                    {/* Right Arrow - Fixed position in left panel */}
+                    <button
+                      onClick={nextImage}
+                      className="absolute right-6 top-1/2 transform -translate-y-1/2 bg-black/40 hover:bg-black/60 backdrop-blur-md text-white p-4 rounded-full transition-all duration-200 border border-white/30 z-30 shadow-lg"
+                    >
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+                      </svg>
+                    </button>
+                  </>
+                )}
                 
                 {/* Image Thumbnails */}
                 {images.length > 1 && (
