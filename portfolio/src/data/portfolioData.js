@@ -35,8 +35,8 @@ const projectConfigs = {
   },
   'ecommerce': {
     folder: 'ecommerce-site',
-    imageCount: 3,
-    customImages: ['ecommerce-homepage.jpg', 'ecommerce-products.jpg', 'ecommerce-cart.jpg']
+    imageCount: 5,
+    customImages: ['Homepage.png', 'collection.png', 'product.png', 'login.png', 'checkout.png']
   },
   'travel-journal': {
     folder: 'weather-app',
@@ -102,14 +102,14 @@ export const projectsData = [
   },
   {
     id: 3,
-    title: "🛒 E-commerce Platform",
-    description: "Developed for my family's clothing business in Egypt, transforming their local operation into a professional online presence with real customers and transactions.",
+    title: "🛒 Herself Era - Islamic Fashion E-commerce",
+    description: "A professional e-commerce platform I built for my family's 'Herself Era' Islamic/modest fashion business. Features beautiful product photography, clean design, and serves real customers with secure transactions.",
     fullDescription: {
-      problem: "My family's clothing business needed a professional online presence to expand beyond local sales in Egypt. They required a complete e-commerce solution that could handle real transactions, inventory management, and customer interactions.",
-      solution: "Built a comprehensive e-commerce platform from the ground up, featuring product catalog management, secure payment processing, inventory tracking, and an intuitive admin dashboard for business operations management.",
-      techUsed: "Implemented using the MERN stack (MongoDB, Express.js, React, Node.js) for full-stack development, integrated Stripe and Razorpay for international and local payment processing, utilized Cloudinary for optimized image management, and secured with JWT authentication.",
-      challenges: "The most complex aspect was implementing reliable payment processing and comprehensive database management. Ensuring seamless integration between inventory systems, payment gateways, and admin controls required careful architecture and extensive testing.",
-      outcome: "Successfully launched a production e-commerce platform currently serving real customers for my family's business. The experience of building something with genuine business impact and seeing actual user engagement has been incredibly rewarding and educational."
+      problem: "When a family member approached me to develop a website for their Islamic/modest fashion business 'Herself Era', I recognized an opportunity to create a comprehensive e-commerce solution that would transform their local Egyptian operation into a professional online presence. The challenge was building a platform that could handle real transactions, inventory management, and customer interactions while maintaining the elegant aesthetic that represents their brand values.",
+      solution: "Built a comprehensive e-commerce platform from the ground up for Herself Era, featuring an elegant product catalog with stunning photography, secure payment processing, inventory tracking, and an intuitive admin dashboard. The design emphasizes the beauty and modesty of Islamic fashion with a clean, professional interface.",
+      techUsed: "Implemented using the MERN stack (MongoDB, Express.js, React, Node.js) for full-stack development, integrated Stripe and Razorpay for international and local payment processing, utilized Cloudinary for optimized image management of the beautiful product photography, and secured with JWT authentication.",
+      challenges: "The most complex aspect was implementing reliable payment processing and comprehensive database management while maintaining the elegant visual design that represents the Herself Era brand. Ensuring seamless integration between inventory systems, payment gateways, and admin controls required careful architecture and extensive testing.",
+      outcome: "Successfully launched Herself Era's production e-commerce platform currently serving real customers and showcasing beautiful Islamic/modest fashion. The experience of building something with genuine business impact for my family's brand and seeing actual customer engagement has been incredibly rewarding and educational."
     },
     image: getProjectImages('ecommerce')[0],
     images: getProjectImages('ecommerce'),
