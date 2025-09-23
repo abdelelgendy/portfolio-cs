@@ -219,7 +219,56 @@ export const ProjectCard = ({
             onClick={closeDetailsPanel}
           />
           
-          {/* Slide-out Panel */}
+          {/* Left Side - Standalone Floating Images */}
+          <div className="absolute left-8 top-1/2 -translate-y-1/2 z-10">
+            <div className="relative">
+              {/* Main Floating Image */}
+              <div className="bg-black/20 backdrop-blur-md rounded-2xl p-6 shadow-2xl border border-white/10">
+                <img
+                  src={images[currentImageIndex]}
+                  alt={`${project.title} screenshot ${currentImageIndex + 1}`}
+                  className="w-96 h-64 object-contain rounded-xl"
+                  draggable={false}
+                />
+                
+                {/* Navigation Arrows */}
+                {images.length > 1 && (
+                  <>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+                      }}
+                      className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black/90 text-white p-2 rounded-full transition-all duration-200 shadow-lg backdrop-blur-sm"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                      </svg>
+                    </button>
+                    
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setCurrentImageIndex((prev) => (prev + 1) % images.length);
+                      }}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black/90 text-white p-2 rounded-full transition-all duration-200 shadow-lg backdrop-blur-sm"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+                      </svg>
+                    </button>
+
+                    {/* Image Counter */}
+                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-black/80 text-white px-3 py-1 rounded-full text-xs backdrop-blur-sm">
+                      {currentImageIndex + 1} / {images.length}
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
+          </div>
+          
+          {/* Right Side - Details Card */}
           <div className="ml-auto w-full max-w-2xl bg-gray-900 shadow-2xl transform transition-transform duration-300 ease-out translate-x-0">
             <div className="h-full flex flex-col">
               {/* Panel Header */}
@@ -298,22 +347,23 @@ export const ProjectCard = ({
                 {/* Complete Tech Stack */}
                 <div className="bg-gradient-to-br from-yellow-500/10 to-amber-500/10 border-l-4 border-yellow-400 rounded-r-xl p-6">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center">
-                      <span className="text-white text-sm">🛠️</span>
-                    </div>
-                    <h3 className="text-yellow-400 font-bold text-lg">Technologies Used</h3>
+                  <div className="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-sm">🛠️</span>
                   </div>
-                  <div className="flex flex-wrap gap-3">
-                    {project.techStack.map((tech, index) => (
-                      <span 
-                        key={index} 
-                        className={`px-4 py-2 text-sm font-semibold rounded-lg transition-transform duration-200 hover:scale-105 ${getTechColor(tech)}`}
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                  <h3 className="text-yellow-400 font-bold text-lg">Technologies Used</h3>
                 </div>
+                <div className="flex flex-wrap gap-3">
+                  {project.techStack.map((tech, index) => (
+                    <span 
+                      key={index} 
+                      className={`px-4 py-2 text-sm font-semibold rounded-lg transition-transform duration-200 hover:scale-105 ${getTechColor(tech)}`}
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
               </div>
 
               {/* Panel Footer with Actions */}
