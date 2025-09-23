@@ -50,7 +50,7 @@ const ProjectCard = ({ project }) => {
   };
 
   return (
-    <div className="relative bg-gray-900 border border-gray-700 rounded-lg shadow-lg hover:shadow-green-500/20 transition-all duration-700 hover:scale-[1.03] group overflow-hidden">
+  <div className="relative bg-gray-900 border border-gray-700 rounded-lg shadow-lg hover:shadow-green-500/20 transition-all duration-700 hover:scale-[1.03] group overflow-hidden ui-scale-90">
       {/* Scan lines overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10"></div>
       
@@ -61,7 +61,7 @@ const ProjectCard = ({ project }) => {
         <img 
           src={project.image} 
           alt={project.title}
-          className="w-full h-48 object-cover filter grayscale-[0.7] hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
+          className="w-full h-36 md:h-44 object-cover filter grayscale-[0.7] hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60"></div>
         <div className="absolute inset-0 bg-green-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -78,21 +78,21 @@ const ProjectCard = ({ project }) => {
         </div>
       </div>
 
-      <div className="p-6 relative">
+  <div className="p-4 relative">
         {/* Terminal prompt style title */}
         <div className="flex items-center gap-2 mb-3">
           <span className="text-green-500 font-mono text-sm">root@portfolio:~$</span>
           <span className="text-gray-500 font-mono text-sm">cat</span>
         </div>
         
-        <h3 className="text-xl font-semibold text-white mb-3 font-mono group-hover:text-green-400 transition-colors duration-300 relative">
+  <h3 className="text-lg font-semibold text-white mb-3 font-mono group-hover:text-green-400 transition-colors duration-300 relative">
           <span className="text-green-500">&gt;</span> {project.title}
           <span className="absolute -right-2 top-0 w-0.5 h-6 bg-green-400 opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300"></span>
         </h3>
         
         <div className="relative">
           <span className="absolute -left-4 top-0 text-yellow-400 font-mono text-sm opacity-60">//</span>
-          <p className="text-gray-400 mb-5 text-sm font-mono leading-relaxed pl-2 border-l border-gray-700 group-hover:border-green-500/50 transition-colors duration-300">
+          <p className="text-gray-400 mb-5 text-xs font-mono leading-relaxed pl-2 border-l border-gray-700 group-hover:border-green-500/50 transition-colors duration-300">
             {project.description}
           </p>
         </div>

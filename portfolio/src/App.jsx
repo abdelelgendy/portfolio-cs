@@ -267,8 +267,8 @@ function App() {
       </nav>
       
       {/* Home Section */}
-      <section id="home" className="pt-20 py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-        <div className="max-w-6xl mx-auto px-6 text-center">
+      <section id="home" className="pt-12 py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 fit-vh">
+  <div className="max-w-4xl mx-auto px-4 text-center ui-scale-90 narrow-container">
           {/* Profile Picture */}
           <div className="mb-12">
             <div className="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-blue-400 shadow-2xl transform hover:scale-105 transition-transform duration-300">
@@ -284,10 +284,10 @@ function App() {
             </div>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
             Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Abdelrahman Elgendy</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-gray-300 mb-6 max-w-3xl mx-auto leading-relaxed">
             Frontend Developer passionate about creating beautiful web experiences 
             with React and modern technologies.
           </p>
@@ -309,10 +309,10 @@ function App() {
       </section>
       
       {/* About Section */}
-      <section id="about" className="py-24 bg-gray-800">
-        <div className="max-w-6xl mx-auto px-6">
+      <section id="about" className="py-12 bg-gray-800 fit-vh">
+  <div className="max-w-4xl mx-auto px-4 ui-scale-90 narrow-container">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Me</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -320,7 +320,7 @@ function App() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6">
               <p className="text-lg text-gray-300 leading-relaxed">
                 I'm a frontend developer who enjoys turning complex problems into simple, beautiful designs. 
@@ -373,10 +373,10 @@ function App() {
       </section>
       
       {/* Projects Section */}
-      <section id="projects" className="py-24 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="projects" className="py-12 bg-gray-900 fit-vh">
+  <div className="max-w-5xl mx-auto px-4 ui-scale-90 narrow-container">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Projects</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -395,8 +395,8 @@ function App() {
       </section>
       
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800">
-        <div className="max-w-5xl mx-auto px-6 text-center">
+      <section id="contact" className="py-12 bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 fit-vh">
+  <div className="max-w-4xl mx-auto px-4 text-center ui-scale-90 narrow-container">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Connect</span>
           </h2>

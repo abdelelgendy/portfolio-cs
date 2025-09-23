@@ -3,10 +3,10 @@ import ProjectCard from '../components/ProjectCard';
 
 export default function Projects() {
   return (
-    <div className="max-w-6xl mx-auto">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">Projects</h2>
-        <p className="text-gray-600 max-w-2xl mx-auto">
+  <div className="max-w-6xl mx-auto ui-scale-90">
+      <div className="text-center mb-8">
+        <h2 className="text-xl font-bold text-gray-900 mb-3">Projects</h2>
+        <p className="text-gray-600 max-w-2xl mx-auto text-sm">
           Here are some of the projects I've worked on recently.
         </p>
       </div>

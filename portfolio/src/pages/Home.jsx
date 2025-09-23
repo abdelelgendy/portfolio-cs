@@ -1,14 +1,14 @@
 export default function Home() {
   return (
-    <div className="text-center py-20">
-      <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+  <div className="text-center py-12 ui-scale-90">
+  <h1 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
         Hi, I'm{' '}
         <span className="text-blue-600">
           Abdelrahman Elgendy
         </span>
       </h1>
       
-      <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+  <p className="text-base md:text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
         Frontend Developer passionate about creating beautiful web experiences 
         with React and modern technologies.
       </p>

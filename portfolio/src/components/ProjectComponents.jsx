@@ -57,9 +57,9 @@ export const ProjectCard = ({
 
   return (
     <>
-      <div className={`${cardVariants[cardVariant]} ${className} group`}>
+      <div className={`${cardVariants[cardVariant]} ${className} group ui-scale-90`}>
         {/* Image Section with Enhanced Loading States */}
-        <div className="relative h-48 md:h-56 bg-gray-700 overflow-hidden">
+  <div className="relative h-40 md:h-48 bg-gray-700 overflow-hidden">
           {!imageLoaded && !imageError && (
             <div className="absolute inset-0 bg-gray-700 animate-pulse flex items-center justify-center">
               <div className="text-gray-400">Loading...</div>
@@ -140,13 +140,13 @@ export const ProjectCard = ({
         </div>
 
         {/* Content Section */}
-        <div className="p-6">
-          <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors duration-200">
+          <div className="p-4">
+          <h3 className="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors duration-200">
             {project.title}
           </h3>
           
           {/* Short Description */}
-          <p className="text-gray-300 mb-4 line-clamp-3 leading-relaxed">
+          <p className="text-gray-300 mb-4 line-clamp-3 leading-relaxed text-sm">
             {project.description}
           </p>
 
@@ -212,7 +212,7 @@ export const ProjectCard = ({
 
       {/* Professional Slide-out Details Panel */}
       {showDetailsPanel && (
-        <div className="fixed inset-0 z-50">
+        <div className="fixed inset-0 z-50 ui-scale-90">
           {/* Transparent Backdrop */}
           <div 
             className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300"
@@ -286,8 +286,8 @@ export const ProjectCard = ({
                 
                 {/* Thumbnail Gallery */}
                 {images.length > 1 && (
-                  <div className="mt-6">
-                    <div className="grid grid-cols-6 gap-3">
+                  <div className="mt-4">
+                    <div className="grid grid-cols-4 md:grid-cols-6 gap-3">
                       {images.map((image, index) => (
                         <button
                           key={index}
@@ -320,7 +320,7 @@ export const ProjectCard = ({
             </div>
             
             {/* Right: Project Details */}
-            <div className="w-2/5 bg-gray-900/95 backdrop-blur-md border-l border-gray-700/50 flex flex-col shadow-2xl">
+            <div className="w-2/5 bg-gray-900/95 backdrop-blur-md border-l border-gray-700/50 flex flex-col shadow-2xl ui-scale-90">
               {/* Panel Header */}
               <div className="flex items-center justify-between p-5 border-b border-gray-700/50 bg-gradient-to-r from-gray-800/90 to-gray-900/90">
                 <div>
@@ -457,13 +457,13 @@ export const ProjectsGrid = ({
     : projects;
 
   const gridClasses = {
-    grid: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
-    masonry: "columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8",
-    list: "flex flex-col gap-6"
+    grid: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6",
+    masonry: "columns-1 md:columns-2 lg:columns-2 gap-6 space-y-6",
+    list: "flex flex-col gap-4"
   };
 
   return (
-    <div className={`${gridClasses[layout]} ${className}`}>
+    <div className={`${gridClasses[layout]} ${className} ui-scale-90`}>
       {filteredProjects.map((project, index) => (
         <ProjectCard
           key={project.id || index}
