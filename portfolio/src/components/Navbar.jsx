@@ -27,13 +27,13 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm border-b border-gray-700 z-50 relative overflow-hidden ui-scale-90">
+    <nav className="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm border-b border-gray-700 z-50 relative overflow-hidden">
       {/* Animated background lines */}
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-500/5 to-transparent animate-pulse"></div>
       
       {/* Terminal header */}
-  <div className="bg-gray-800 px-4 py-1 border-b border-gray-600 relative">
-  <div className="flex items-center gap-2 text-sm">
+      <div className="bg-gray-800 px-4 py-2 border-b border-gray-600 relative">
+        <div className="flex items-center gap-2">
           <div className="flex gap-2">
             <div className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-400 transition-colors cursor-pointer relative">
               <div className="absolute inset-0 bg-red-500 rounded-full animate-ping opacity-20"></div>
@@ -69,8 +69,8 @@ export default function Navbar() {
         </div>
       </div>
       
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-14">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
           {/* Logo/Username */}
           <div className="flex-shrink-0">
             <a 

@@ -1,9 +1,9 @@
 export default function About() {
   return (
-  <div className="max-w-4xl mx-auto ui-scale-90">
-      <div className="text-center mb-8">
-        <h2 className="text-xl font-bold text-gray-900 mb-3">About Me</h2>
-        <p className="text-gray-600 max-w-2xl mx-auto text-sm">
+    <div className="max-w-4xl mx-auto">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-bold text-gray-900 mb-4">About Me</h2>
+        <p className="text-gray-600 max-w-2xl mx-auto">
           Computer Science student passionate about frontend development and creating 
           exceptional user experiences.
         </p>

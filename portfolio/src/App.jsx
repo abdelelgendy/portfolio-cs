@@ -267,8 +267,8 @@ function App() {
       </nav>
       
       {/* Home Section */}
-      <section id="home" className="pt-12 py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 fit-vh">
-  <div className="max-w-4xl mx-auto px-4 text-center ui-scale-90 narrow-container">
+      <section id="home" className="pt-20 py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+        <div className="max-w-6xl mx-auto px-6 text-center">
           {/* Profile Picture */}
           <div className="mb-12">
             <div className="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-blue-400 shadow-2xl transform hover:scale-105 transition-transform duration-300">
@@ -287,7 +287,7 @@ function App() {
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
             Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Abdelrahman Elgendy</span>
           </h1>
-          <p className="text-base md:text-lg text-gray-300 mb-6 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
             Frontend Developer passionate about creating beautiful web experiences 
             with React and modern technologies.
           </p>
@@ -309,18 +309,18 @@ function App() {
       </section>
       
       {/* About Section */}
-      <section id="about" className="py-12 bg-gray-800 fit-vh">
-  <div className="max-w-4xl mx-auto px-4 ui-scale-90 narrow-container">
+      <section id="about" className="py-16 bg-gray-800">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Me</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Passionate frontend developer with a love for creating seamless user experiences
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-lg text-gray-300 leading-relaxed">
                 I'm a frontend developer who enjoys turning complex problems into simple, beautiful designs. 
@@ -373,13 +373,13 @@ function App() {
       </section>
       
       {/* Projects Section */}
-      <section id="projects" className="py-12 bg-gray-900 fit-vh">
-  <div className="max-w-5xl mx-auto px-4 ui-scale-90 narrow-container">
+      <section id="projects" className="py-16 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Projects</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Here are some of my recent projects showcasing modern web development techniques and creative solutions
             </p>
           </div>
@@ -395,12 +395,12 @@ function App() {
       </section>
       
       {/* Contact Section */}
-      <section id="contact" className="py-12 bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 fit-vh">
-  <div className="max-w-4xl mx-auto px-4 text-center ui-scale-90 narrow-container">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+      <section id="contact" className="py-16 bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Connect</span>
           </h2>
-          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
             Ready to bring your ideas to life? Let's discuss your next project!
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-8">
