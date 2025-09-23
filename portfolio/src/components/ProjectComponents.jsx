@@ -238,63 +238,62 @@ export const ProjectCard = ({
                 </button>
               </div>
 
-                {/* Panel Content */}
-                <div className="flex-1 overflow-y-auto project-details-scroll" style={{ padding: '1.5rem', paddingRight: '1rem' }}>
-                  <div className="space-y-6 pr-4">
-                    {/* Problem Statement */}
-                  <div className="bg-gradient-to-br from-red-500/10 to-pink-500/10 border-l-4 border-red-400 rounded-r-xl p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center">
-                        <span className="text-white text-sm">⚡</span>
-                      </div>
-                      <h3 className="text-red-400 font-bold text-lg">Problem Statement</h3>
+              {/* Panel Content */}
+              <div className="flex-1 overflow-y-auto p-6 space-y-6">
+                {/* Problem Statement */}
+                <div className="bg-gradient-to-br from-red-500/10 to-pink-500/10 border-l-4 border-red-400 rounded-r-xl p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center">
+                      <span className="text-white text-sm">⚡</span>
                     </div>
-                    <p className="text-gray-300 leading-relaxed">{project.fullDescription.problem}</p>
+                    <h3 className="text-red-400 font-bold text-lg">Problem Statement</h3>
                   </div>
+                  <p className="text-gray-300 leading-relaxed">{project.fullDescription.problem}</p>
+                </div>
 
-                  {/* Solution Approach */}
-                  <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 border-l-4 border-green-400 rounded-r-xl p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
-                        <span className="text-white text-sm">💡</span>
-                      </div>
-                      <h3 className="text-green-400 font-bold text-lg">Solution Approach</h3>
+                {/* Solution Approach */}
+                <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 border-l-4 border-green-400 rounded-r-xl p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+                      <span className="text-white text-sm">💡</span>
                     </div>
-                    <p className="text-gray-300 leading-relaxed">{project.fullDescription.solution}</p>
+                    <h3 className="text-green-400 font-bold text-lg">Solution Approach</h3>
                   </div>
+                  <p className="text-gray-300 leading-relaxed">{project.fullDescription.solution}</p>
+                </div>
 
-                  {/* Technical Implementation */}
-                  <div className="bg-gradient-to-br from-purple-500/10 to-violet-500/10 border-l-4 border-purple-400 rounded-r-xl p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
-                        <span className="text-white text-sm">⚙️</span>
-                      </div>
-                      <h3 className="text-purple-400 font-bold text-lg">Technical Implementation</h3>
+                {/* Technical Implementation */}
+                <div className="bg-gradient-to-br from-purple-500/10 to-violet-500/10 border-l-4 border-purple-400 rounded-r-xl p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
+                      <span className="text-white text-sm">⚙️</span>
                     </div>
-                    <p className="text-gray-300 leading-relaxed">{project.fullDescription.techUsed}</p>
+                    <h3 className="text-purple-400 font-bold text-lg">Technical Implementation</h3>
                   </div>
+                  <p className="text-gray-300 leading-relaxed">{project.fullDescription.techUsed}</p>
+                </div>
 
-                  {/* Challenges & Solutions */}
-                  <div className="bg-gradient-to-br from-orange-500/10 to-amber-500/10 border-l-4 border-orange-400 rounded-r-xl p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
-                        <span className="text-white text-sm">🔧</span>
-                      </div>
-                      <h3 className="text-orange-400 font-bold text-lg">Challenges & Solutions</h3>
+                {/* Challenges & Solutions */}
+                <div className="bg-gradient-to-br from-orange-500/10 to-amber-500/10 border-l-4 border-orange-400 rounded-r-xl p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
+                      <span className="text-white text-sm">🔧</span>
                     </div>
-                    <p className="text-gray-300 leading-relaxed">{project.fullDescription.challenges}</p>
+                    <h3 className="text-orange-400 font-bold text-lg">Challenges & Solutions</h3>
                   </div>
+                  <p className="text-gray-300 leading-relaxed">{project.fullDescription.challenges}</p>
+                </div>
 
-                  {/* Outcome & Impact */}
-                  <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border-l-4 border-cyan-400 rounded-r-xl p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-8 h-8 bg-cyan-500 rounded-lg flex items-center justify-center">
-                        <span className="text-white text-sm">🎯</span>
-                      </div>
-                      <h3 className="text-cyan-400 font-bold text-lg">Outcome & Impact</h3>
+                {/* Outcome & Impact */}
+                <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border-l-4 border-cyan-400 rounded-r-xl p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-8 h-8 bg-cyan-500 rounded-lg flex items-center justify-center">
+                      <span className="text-white text-sm">🎯</span>
                     </div>
-                    <p className="text-gray-300 leading-relaxed">{project.fullDescription.outcome}</p>
+                    <h3 className="text-cyan-400 font-bold text-lg">Outcome & Impact</h3>
                   </div>
+                  <p className="text-gray-300 leading-relaxed">{project.fullDescription.outcome}</p>
+                </div>
 
                 {/* Complete Tech Stack */}
                 <div className="bg-gradient-to-br from-yellow-500/10 to-amber-500/10 border-l-4 border-yellow-400 rounded-r-xl p-6">
@@ -317,26 +316,25 @@ export const ProjectCard = ({
                 </div>
               </div>
 
-                {/* Panel Footer with Actions */}
-                <div className="p-6 border-t border-gray-700 bg-gray-800/50">
-                  <div className="flex gap-4">
-                    <a 
-                      href={project.liveLink} 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 text-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
-                    >
-                      🌐 View Live Demo
-                    </a>
-                    <a 
-                      href={project.codeLink} 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 text-center border-2 border-gray-600 hover:border-blue-400 hover:bg-gray-700 text-gray-300 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105"
-                    >
-                      💻 View Source Code
-                    </a>
-                  </div>
+              {/* Panel Footer with Actions */}
+              <div className="p-6 border-t border-gray-700 bg-gray-800/50">
+                <div className="flex gap-4">
+                  <a 
+                    href={project.liveLink} 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+                  >
+                    🌐 View Live Demo
+                  </a>
+                  <a 
+                    href={project.codeLink} 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center border-2 border-gray-600 hover:border-blue-400 hover:bg-gray-700 text-gray-300 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105"
+                  >
+                    💻 View Source Code
+                  </a>
                 </div>
               </div>
             </div>
