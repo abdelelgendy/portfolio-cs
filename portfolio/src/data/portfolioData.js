@@ -25,18 +25,18 @@ const generateImagePaths = (projectFolder, imageCount = 3, extensions = ['jpg', 
 const projectConfigs = {
   'movie-app': {
     folder: 'movie-app',
-    imageCount: 3,
-    customImages: ['movie-app-homepage.png', 'movie-app-browse.png', 'movie-app-1.png']
+    imageCount: 4,
+    customImages: ['app.png', 'movie-app-1.png', 'movie-app-2.png', 'movie-app-3.png']
   },
   'meal-planning': {
-    folder: 'task-manager',
-    imageCount: 3,
-    customImages: ['meal-dashboard.jpg', 'meal-planning.jpg', 'meal-nutrition.jpg']
+    folder: 'meal-mind',
+    imageCount: 6,
+    customImages: ['Homepage.png', 'plan.png', 'pantry.png', 'recipes.png', 'profile.png', 'pantry2.png']
   },
   'ecommerce': {
     folder: 'ecommerce-site',
-    imageCount: 3,
-    customImages: ['ecommerce-homepage.jpg', 'ecommerce-products.jpg', 'ecommerce-cart.jpg']
+    imageCount: 5,
+    customImages: ['Homepage.png', 'collection.png', 'product.png', 'login.png', 'checkout.png']
   },
   'travel-journal': {
     folder: 'weather-app',
@@ -67,13 +67,13 @@ export const projectsData = [
   {
     id: 1,
     title: "🎬 React Movie Discovery App",
-    description: "A Netflix-inspired movie discovery platform that solves the problem of scattered movie information across multiple platforms.",
+    description: "Built to master API integration and React fundamentals. Features a custom search algorithm and recommendation system that I'm genuinely proud of.",
     fullDescription: {
-      problem: "Movie enthusiasts often struggle to find comprehensive information about films, including ratings, cast details, and streaming availability, scattered across multiple websites and platforms.",
-      solution: "Built a centralized movie discovery platform that aggregates movie data from multiple APIs, providing users with detailed information, ratings, trailers, and reviews in one seamless interface.",
-      techUsed: "Developed using React.js for dynamic UI components, integrated with The Movie Database (TMDb) API for real-time movie data, implemented responsive design with Tailwind CSS, and added smooth animations for enhanced user experience.",
-      challenges: "The main challenge was handling large datasets from external APIs while maintaining fast load times. Solved this by implementing pagination, lazy loading for images, and optimizing API calls with debounced search functionality.",
-      outcome: "Created a professional-grade application that demonstrates proficiency in API integration, state management, and modern React patterns. The app showcases ability to work with external data sources and create intuitive user interfaces."
+      problem: "I wanted to deepen my understanding of API integration and React state management while building something practical. The goal was to create a seamless movie discovery experience that could handle real-time data effectively.",
+      solution: "Developed a comprehensive movie discovery platform using The Movie Database API, implementing dynamic search functionality and a custom recommendation algorithm that suggests relevant content based on user interactions.",
+      techUsed: "Built with React.js for component-based architecture, integrated TMDb API with proper error handling and loading states, implemented debounced search to optimize API calls, and created a recommendation system using movie metadata analysis.",
+      challenges: "Managing API rate limits and ensuring responsive user experience required implementing smart debouncing strategies. The recommendation algorithm needed careful tuning to provide relevant suggestions while handling diverse movie data efficiently.",
+      outcome: "Successfully created a production-ready movie discovery platform that demonstrates strong API integration skills and React best practices. The search functionality is highly responsive and the recommendation system provides genuinely useful suggestions."
     },
     image: getProjectImages('movie-app')[0],
     images: getProjectImages('movie-app'),
@@ -85,13 +85,13 @@ export const projectsData = [
   {
     id: 2,
     title: "🍽️ MealMind - Meal Planning App",
-    description: "An intelligent meal planning solution that addresses the daily struggle of healthy meal preparation and nutrition tracking.",
+    description: "Designed to create real value for users managing meal planning and pantry organization. Currently in active use - it genuinely solves everyday problems.",
     fullDescription: {
-      problem: "Many people struggle with meal planning, leading to poor nutrition choices, food waste, and the stress of deciding what to eat daily. Existing solutions were either too complex or lacked personalization.",
-      solution: "Developed MealMind, a comprehensive meal planning application that provides personalized meal recommendations, generates shopping lists, and tracks nutritional goals based on user preferences and dietary restrictions.",
-      techUsed: "Built with React and Vite for fast development and optimal performance, integrated Supabase for real-time database management and user authentication, implemented responsive design for mobile-first experience, and created custom algorithms for meal recommendation logic.",
-      challenges: "The biggest challenge was creating an intelligent recommendation system that considers user preferences, dietary restrictions, and nutritional balance. Solved by implementing a scoring algorithm that weighs multiple factors and learns from user interactions.",
-      outcome: "Successfully created a full-stack application that demonstrates database design, user authentication, complex state management, and algorithm implementation. The app shows proficiency in modern React patterns and backend integration."
+      problem: "I wanted to build something with genuine utility that addresses real-world meal planning challenges. The initial focus was helping users maximize existing ingredients, which evolved into a comprehensive meal management solution.",
+      solution: "Developed MealMind as a full-featured meal planning application that combines recipe discovery, meal scheduling, and pantry management. Users can plan meals based on available ingredients and maintain organized meal schedules.",
+      techUsed: "Built with React and Vite for optimal performance, integrated Supabase for real-time database management and user authentication, implemented complex state management for pantry tracking, and integrated recipe APIs for comprehensive meal options.",
+      challenges: "Database optimization and API reliability presented the primary technical challenges. Ensuring seamless real-time updates across pantry management and meal planning required careful state management and efficient database queries.",
+      outcome: "Successfully deployed a functional meal planning application that I actively use and validate. The platform effectively addresses real meal planning needs, with future enhancements planned including automated pantry management through receipt scanning technology."
     },
     image: getProjectImages('meal-planning')[0],
     images: getProjectImages('meal-planning'),
@@ -102,14 +102,14 @@ export const projectsData = [
   },
   {
     id: 3,
-    title: "🛒 E-commerce Platform",
-    description: "A complete e-commerce solution that solves the complexity of online retail for small to medium businesses.",
+    title: "🛒 Herself Era - Islamic Fashion E-commerce",
+    description: "A professional e-commerce platform I built for my family's 'Herself Era' Islamic/modest fashion business. Features beautiful product photography, clean design, and serves real customers with secure transactions.",
     fullDescription: {
-      problem: "Small businesses often struggle with expensive e-commerce platforms that lack customization or are too complex to manage. They need affordable, scalable solutions with essential features like inventory management, secure payments, and admin controls.",
-      solution: "Built a full-stack e-commerce platform from scratch with complete shopping functionality, secure payment processing, inventory management, and an intuitive admin dashboard for business owners to manage their online store effectively.",
-      techUsed: "Developed using the MERN stack (MongoDB, Express.js, React, Node.js) for full-stack JavaScript development, integrated Stripe and Razorpay for secure payment processing, implemented Cloudinary for optimized image management, used JWT for secure authentication, and designed responsive UI with Tailwind CSS.",
-      challenges: "The main challenges included implementing secure payment processing, managing complex state for shopping cart functionality, and creating an efficient inventory management system. Solved by implementing proper authentication flows, optimistic UI updates, and real-time inventory tracking.",
-      outcome: "Successfully delivered a production-ready e-commerce platform demonstrating full-stack development skills, payment integration expertise, database design, and security best practices. The project showcases ability to handle complex business logic and create scalable applications."
+      problem: "When a family member approached me to develop a website for their Islamic/modest fashion business 'Herself Era', I recognized an opportunity to create a comprehensive e-commerce solution that would transform their local Egyptian operation into a professional online presence. The challenge was building a platform that could handle real transactions, inventory management, and customer interactions while maintaining the elegant aesthetic that represents their brand values.",
+      solution: "Built a comprehensive e-commerce platform from the ground up for Herself Era, featuring an elegant product catalog with stunning photography, secure payment processing, inventory tracking, and an intuitive admin dashboard. The design emphasizes the beauty and modesty of Islamic fashion with a clean, professional interface.",
+      techUsed: "Implemented using the MERN stack (MongoDB, Express.js, React, Node.js) for full-stack development, integrated Stripe and Razorpay for international and local payment processing, utilized Cloudinary for optimized image management of the beautiful product photography, and secured with JWT authentication.",
+      challenges: "The most complex aspect was implementing reliable payment processing and comprehensive database management while maintaining the elegant visual design that represents the Herself Era brand. Ensuring seamless integration between inventory systems, payment gateways, and admin controls required careful architecture and extensive testing.",
+      outcome: "Successfully launched Herself Era's production e-commerce platform currently serving real customers and showcasing beautiful Islamic/modest fashion. The experience of building something with genuine business impact for my family's brand and seeing actual customer engagement has been incredibly rewarding and educational."
     },
     image: getProjectImages('ecommerce')[0],
     images: getProjectImages('ecommerce'),
@@ -131,13 +131,13 @@ export const projectsData = [
   {
     id: 4,
     title: "🌊 Mediterranean & Middle Eastern Travel Journal",
-    description: "A digital storytelling platform that preserves and shares cultural travel experiences through interactive journaling.",
+    description: "A creative front-end project focused on visual storytelling and animation. Emphasized design aesthetics and smooth user interactions over complex functionality.",
     fullDescription: {
-      problem: "Traditional travel documentation often fails to capture the emotional depth and cultural nuances of travel experiences. Social media posts are fleeting, and written journals lack visual storytelling capabilities for sharing meaningful travel memories.",
-      solution: "Created an interactive digital travel journal that combines visual storytelling with detailed cultural insights, allowing travelers to document, preserve, and share their journeys in an engaging, narrative-driven format with location-based entries and immersive photo galleries.",
-      techUsed: "Built with React for component-based architecture, implemented custom CSS3 animations for smooth user interactions, used Vite for optimized development workflow, integrated ESLint for code quality, and designed responsive layouts that work seamlessly across devices.",
-      challenges: "The primary challenge was creating an engaging storytelling interface that could handle rich media content while maintaining fast performance. Solved by implementing lazy loading for images, optimizing animation performance, and creating modular components for different content types.",
-      outcome: "Delivered a visually stunning application that demonstrates advanced CSS skills, animation implementation, and storytelling through code. The project showcases ability to create engaging user experiences and handle multimedia content effectively."
+      problem: "I wanted to focus purely on front-end skills and visual design without the complexity of backend systems. The goal was to create something visually engaging that would showcase animation and design capabilities.",
+      solution: "Created an interactive travel journal highlighting Mediterranean and Middle Eastern destinations with emphasis on smooth animations, visual storytelling, and engaging user experience design.",
+      techUsed: "Built with React for component architecture, utilized Vite for efficient development workflow, implemented custom CSS3 animations for fluid interactions, and ensured responsive design across all device types.",
+      challenges: "The primary focus was creating compelling visual experiences and smooth animations. While technically less complex than full-stack projects, achieving the right balance of visual appeal and performance required careful attention to animation optimization and user experience flow.",
+      outcome: "Successfully created a visually engaging application that demonstrates strong front-end development skills and design sensibility. The animation work turned out particularly well and serves as an excellent showcase of pure front-end capabilities."
     },
     image: getProjectImages('travel-journal')[0],
     images: getProjectImages('travel-journal'),
@@ -149,13 +149,13 @@ export const projectsData = [
   {
     id: 5,
     title: "♠️ BlackJack Game",
-    description: "A web-based casino game that demonstrates vanilla JavaScript mastery and game logic implementation.",
+    description: "One of my foundational projects built in vanilla JavaScript to master core programming concepts. Still actively enjoyed and considering a React migration.",
     fullDescription: {
-      problem: "Learning fundamental programming concepts like game logic, state management, and DOM manipulation can be abstract and difficult to grasp without practical application. Many developers struggle with vanilla JavaScript after becoming dependent on frameworks.",
-      solution: "Developed a fully functional BlackJack game using only vanilla JavaScript, HTML, and CSS to demonstrate mastery of core web development fundamentals, including complex game logic, DOM manipulation, and event handling without framework dependencies.",
-      techUsed: "Built entirely with vanilla JavaScript for game logic and state management, HTML5 for semantic structure and accessibility, CSS3 for styling and card animations, implemented object-oriented programming principles, and created responsive design for cross-device compatibility.",
-      challenges: "The main challenges included implementing authentic casino rules, managing complex game state (deck, hands, betting), and creating smooth animations without external libraries. Solved by breaking down game logic into modular functions, implementing proper state management patterns, and using CSS transforms for performance-optimized animations.",
-      outcome: "Successfully created a production-quality game that demonstrates strong foundation in core web technologies. The project proves ability to build complex applications without frameworks and shows mastery of fundamental programming concepts essential for any advanced development work."
+      problem: "As an early project, I wanted to solidify my understanding of vanilla JavaScript fundamentals before advancing to frameworks. Building an interactive game provided practical application of core programming concepts.",
+      solution: "Developed a fully functional BlackJack game using pure vanilla JavaScript, HTML, and CSS. The project emphasizes fundamental programming principles including DOM manipulation, state management, and complex game logic implementation.",
+      techUsed: "Built entirely with vanilla JavaScript for game logic and state management, HTML5 for semantic structure, and CSS3 for styling and animations. Implemented object-oriented programming principles and responsive design without external dependencies.",
+      challenges: "The most complex aspect was implementing advanced BlackJack features like hand splitting and multi-split scenarios. Managing multiple game states, betting logic, and ensuring accurate rule implementation required careful algorithmic thinking.",
+      outcome: "Created a production-quality game that demonstrates strong foundational programming skills. The project remains actively used and serves as a benchmark for my growth - currently considering migrating it to React to showcase framework evolution skills."
     },
     image: getProjectImages('blackjack')[0],
     images: getProjectImages('blackjack'),
