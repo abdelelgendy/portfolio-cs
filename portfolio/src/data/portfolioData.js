@@ -44,9 +44,9 @@ const projectConfigs = {
     customImages: ['travel-homepage.jpg', 'travel-journal.jpg', 'travel-gallery.jpg']
   },
   'blackjack': {
-    folder: 'portfolio-site',
-    imageCount: 3,
-    customImages: ['blackjack-game.jpg', 'blackjack-playing.jpg', 'blackjack-rules.jpg']
+    folder: 'portfolio-site/blackjack',
+    imageCount: 5,
+    customImages: ['blackjack-1.png', 'blackjack-2.png', 'blackjack-3.png', 'blackjack-4.png', 'blackjack-5.png']
   }
 };
 
