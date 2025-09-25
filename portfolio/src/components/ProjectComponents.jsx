@@ -69,7 +69,7 @@ export const ProjectCard = ({
           {imageError ? (
             <div className="absolute inset-0 bg-gray-700 flex items-center justify-center flex-col">
               <div className="text-6xl mb-2">🖼️</div>
-              <div className="text-gray-400 text-sm">Image not found</div>
+              <div className="text-gray-400 text-sm">Currently under construction</div>
               <div className="text-gray-500 text-xs mt-1">{project.title}</div>
             </div>
           ) : (

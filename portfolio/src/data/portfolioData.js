@@ -39,14 +39,14 @@ const projectConfigs = {
     customImages: ['Homepage.png', 'collection.png', 'product.png', 'login.png', 'checkout.png']
   },
   'travel-journal': {
-    folder: 'weather-app',
+    folder: 'travel-journal',
     imageCount: 3,
-    customImages: ['travel-homepage.jpg', 'travel-journal.jpg', 'travel-gallery.jpg']
+    customImages: ['travel1.png', 'travel2.png', 'travel3.png']
   },
   'blackjack': {
-    folder: 'portfolio-site/blackjack',
+    folder: 'Blackjack',
     imageCount: 5,
-    customImages: ['blackjack-1.png', 'blackjack-2.png', 'blackjack-3.png', 'blackjack-4.png', 'blackjack-5.png']
+    customImages: ['game1.png', 'game2.png', 'game3.png', 'game4.png', 'game5.png']
   }
 };
 
@@ -160,7 +160,7 @@ export const projectsData = [
     image: getProjectImages('blackjack')[0],
     images: getProjectImages('blackjack'),
     techStack: ["JavaScript", "HTML", "CSS"],
-    liveLink: "https://blackjack-app-abdel.netlify.app",
+    liveLink: "https://www.shutterstock.com/image-photo/work-progress-sorry-inconvenience-caused-260nw-1486286573.jpg",
     codeLink: "https://github.com/abdelelgendy/BlackJack",
     featured: true,
   },
