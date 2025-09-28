@@ -4,8 +4,9 @@ export default function About() {
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-gray-900 mb-4">About Me</h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          Computer Science student passionate about frontend development and creating 
-          exceptional user experiences.
+          Computer Science student passionate about frontend and full-stack development. <br/>
+          <span className="font-semibold text-blue-600">5</span> major projects completed: <span className="font-semibold text-blue-600">3 React</span> projects, <span className="font-semibold text-green-500">3 Full-Stack</span> projects.<br/>
+          Tech stack includes React, Appwrite, Tailwind CSS, Vite, JavaScript, TMDB API, React-use, Express, MongoDB, Supabase, and more.
         </p>
       </div>
 

@@ -45,6 +45,9 @@ const ProjectCard = ({ project }) => {
       'Cloudinary': 'bg-blue-500 text-white',
       'JWT': 'bg-gray-800 text-white',
       'ESLint': 'bg-purple-600 text-white'
+      , 'Appwrite': 'bg-pink-500 text-white'
+      , 'TMDB API': 'bg-green-700 text-white'
+      , 'React-use': 'bg-gray-400 text-black'
     };
     return colors[tech] || 'bg-gray-500 text-white';
   };

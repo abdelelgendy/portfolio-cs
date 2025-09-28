@@ -66,18 +66,27 @@ const getProjectImages = (projectKey) => {
 export const projectsData = [
   {
     id: 1,
-    title: "🎬 React Movie Discovery App",
-    description: "Built to master API integration and React fundamentals. Features a custom search algorithm and recommendation system that I'm genuinely proud of.",
+    title: "🎬 React Movie App (TMDB, Appwrite, Tailwind)",
+    description: "A modern movie discovery app built with React.js, Appwrite, and Tailwind CSS. Browse trending movies, search titles, and explore content using the TMDB API. Features a responsive, sleek UI and a robust backend.",
     fullDescription: {
-      problem: "I wanted to deepen my understanding of API integration and React state management while building something practical. The goal was to create a seamless movie discovery experience that could handle real-time data effectively.",
-      solution: "Developed a comprehensive movie discovery platform using The Movie Database API, implementing dynamic search functionality and a custom recommendation algorithm that suggests relevant content based on user interactions.",
-      techUsed: "Built with React.js for component-based architecture, integrated TMDb API with proper error handling and loading states, implemented debounced search to optimize API calls, and created a recommendation system using movie metadata analysis.",
-      challenges: "Managing API rate limits and ensuring responsive user experience required implementing smart debouncing strategies. The recommendation algorithm needed careful tuning to provide relevant suggestions while handling diverse movie data efficiently.",
-      outcome: "Successfully created a production-ready movie discovery platform that demonstrates strong API integration skills and React best practices. The search functionality is highly responsive and the recommendation system provides genuinely useful suggestions."
+      problem: "I wanted to build a seamless, modern movie discovery experience that leverages real APIs and scalable backend services. The goal was to create a platform that not only looks great but is also robust, fast, and easy to maintain.",
+      solution: "Developed a full-featured movie app using React.js for the UI, Appwrite for backend services (auth, database, storage), and Tailwind CSS for rapid, responsive styling. Integrated the TMDB API for real movie data, and used react-use for advanced hooks and state management. The app features trending algorithms, search, and a modern codebase.",
+      techUsed: "React.js for the frontend, Appwrite as a BaaS backend, Tailwind CSS for utility-first styling, Vite for lightning-fast builds, react-use for hooks, and TMDB API for movie data. The architecture is modular and reusable, with a focus on code quality and scalability.",
+      challenges: "Integrating Appwrite with React and handling real-time data updates, authentication, and storage. Ensuring the UI is fully responsive and modern. Optimizing API calls and state management for a smooth user experience.",
+      outcome: "Launched a production-ready movie app with a sleek UI, robust backend, and active user community. The project is open source and supported by a Discord community of 50k+ members for help and collaboration."
     },
     image: getProjectImages('movie-app')[0],
     images: getProjectImages('movie-app'),
-    techStack: ["React", "Tailwind CSS", "REST API", "JavaScript"],
+    techStack: [
+      "React",
+      "Appwrite",
+      "Tailwind CSS",
+      "Vite",
+      "JavaScript",
+      "TMDB API",
+      "React-use",
+      "REST API"
+    ],
     liveLink: "https://abdels-movie-app2.netlify.app",
     codeLink: "https://github.com/abdelelgendy/react-Movie-app",
     featured: true
@@ -185,6 +194,9 @@ export const skillsData = [
       { name: "Node.js", level: 80, icon: "🟢" },
       { name: "Express", level: 80, icon: "🚀" },
       { name: "MongoDB", level: 75, icon: "🍃" },
+      { name: "Appwrite", level: 75, icon: "🟣" },
+      { name: "TMDB API", level: 70, icon: "🎬" },
+      { name: "React-use", level: 70, icon: "🔄" },
       { name: "Stripe/Razorpay", level: 70, icon: "💳" },
       { name: "Cloudinary", level: 70, icon: "☁️" },
       { name: "REST APIs", level: 85, icon: "🔗" },
