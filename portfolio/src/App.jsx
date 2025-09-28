@@ -110,7 +110,7 @@ function App() {
     };
 
     return (
-      <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 border border-gray-700/50 hover:border-gray-600 transform hover:-translate-y-2 group">
+      <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 group">
         <div 
           className="relative h-56 bg-gray-900 overflow-hidden cursor-pointer"
           onClick={openModal}
@@ -198,27 +198,26 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900">
-      <nav className="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm shadow-lg z-50 border-b border-gray-800">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-black via-gray-800 to-black text-white">
+      <nav className="fixed top-0 w-full bg-black/90 backdrop-blur-md shadow-2xl z-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-center h-20">
-            <div className="font-bold text-2xl text-white">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+            <div className="font-bold text-2xl">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">
                 Abdelrahman Elgendy
               </span>
             </div>
             <div className="hidden md:flex space-x-10">
-              <a href="#home" className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 text-lg">Home</a>
-              <a href="#about" className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 text-lg">About</a>
-              <a href="#projects" className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 text-lg">Projects</a>
-              <a href="#contact" className="text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200 text-lg">Contact</a>
+              <a href="#home" className="text-gray-300 hover:text-cyan-400 font-medium transition-all duration-300 text-lg hover:shadow-[0_0_8px_rgba(0,255,231,0.3)]">Home</a>
+              <a href="#about" className="text-gray-300 hover:text-cyan-400 font-medium transition-all duration-300 text-lg hover:shadow-[0_0_8px_rgba(0,255,231,0.3)]">About</a>
+              <a href="#projects" className="text-gray-300 hover:text-cyan-400 font-medium transition-all duration-300 text-lg hover:shadow-[0_0_8px_rgba(0,255,231,0.3)]">Projects</a>
+              <a href="#contact" className="text-gray-300 hover:text-cyan-400 font-medium transition-all duration-300 text-lg hover:shadow-[0_0_8px_rgba(0,255,231,0.3)]">Contact</a>
             </div>
-            
             {/* Mobile menu button */}
             <div className="md:hidden">
               <button 
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-gray-300 hover:text-white focus:outline-none focus:text-white"
+                className="text-gray-300 hover:text-cyan-400 focus:outline-none focus:text-cyan-400"
               >
                 <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
                   {isMobileMenuOpen ? (
@@ -234,31 +233,31 @@ function App() {
           {/* Mobile menu */}
           {isMobileMenuOpen && (
             <div className="md:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-800/95 backdrop-blur-sm border-t border-gray-700">
+              <div className="px-2 pt-2 pb-3 space-y-1 bg-black/95 backdrop-blur-sm">
                 <a 
                   href="#home" 
-                  className="block px-3 py-2 text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200"
+                  className="block px-3 py-2 text-gray-300 hover:text-cyan-400 font-medium transition-colors duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Home
                 </a>
                 <a 
                   href="#about" 
-                  className="block px-3 py-2 text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200"
+                  className="block px-3 py-2 text-gray-300 hover:text-cyan-400 font-medium transition-colors duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   About
                 </a>
                 <a 
                   href="#projects" 
-                  className="block px-3 py-2 text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200"
+                  className="block px-3 py-2 text-gray-300 hover:text-cyan-400 font-medium transition-colors duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Projects
                 </a>
                 <a 
                   href="#contact" 
-                  className="block px-3 py-2 text-gray-300 hover:text-blue-400 font-medium transition-colors duration-200"
+                  className="block px-3 py-2 text-gray-300 hover:text-cyan-400 font-medium transition-colors duration-200"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Contact
@@ -270,25 +269,24 @@ function App() {
       </nav>
       
       {/* Home Section */}
-      <section id="home" className="pt-20 py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <section id="home" className="pt-20 py-32 bg-transparent relative">
         <div className="max-w-6xl mx-auto px-6 text-center">
           {/* Profile Picture */}
           <div className="mb-12">
-            <div className="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-blue-400 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+            <div className="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-cyan-400/60 shadow-[0_0_30px_rgba(0,255,231,0.3)] transform hover:scale-105 hover:shadow-[0_0_40px_rgba(0,255,231,0.5)] transition-all duration-300">
               <img 
                 src="/profile-picture.jpg" 
                 alt="Abdelrahman Elgendy"
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  // Fallback to a placeholder if image doesn't exist
-                  e.target.src = "https://via.placeholder.com/160x160/3B82F6/FFFFFF?text=AE";
+                  e.target.src = "https://via.placeholder.com/160x160/0D1117/00FFE7?text=AE";
                 }}
               />
             </div>
           </div>
           
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Abdelrahman Elgendy</span>
+            Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">Abdelrahman Elgendy</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
             Frontend Developer passionate about creating beautiful web experiences 
@@ -297,13 +295,13 @@ function App() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <a 
               href="#projects" 
-              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-4 px-8 rounded-lg transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+              className="bg-gradient-to-r from-cyan-600 to-blue-700 hover:from-cyan-700 hover:to-blue-800 text-white font-semibold py-4 px-8 rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]"
             >
               View Projects
             </a>
             <a 
               href="#contact" 
-              className="border-2 border-gray-600 hover:border-blue-400 hover:bg-gray-800 text-gray-300 hover:text-white font-semibold py-4 px-8 rounded-lg transform hover:scale-105 transition-all duration-200"
+              className="border-2 border-cyan-400/50 hover:border-cyan-400 hover:bg-cyan-400/10 text-gray-300 hover:text-white font-semibold py-4 px-8 rounded-lg transform hover:scale-105 transition-all duration-300 hover:shadow-[0_0_15px_rgba(0,255,231,0.3)]"
             >
               Contact Me
             </a>
@@ -312,11 +310,12 @@ function App() {
       </section>
       
       {/* About Section */}
-      <section id="about" className="py-16 bg-gray-800">
-        <div className="max-w-6xl mx-auto px-6">
+      <section id="about" className="py-16 bg-transparent relative">
+        
+        <div className="max-w-6xl mx-auto px-6 relative z-20">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Me</span>
+              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">Me</span>
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Passionate frontend developer with a love for creating seamless user experiences
@@ -342,31 +341,31 @@ function App() {
             </div>
             
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-gray-900/50 p-6 rounded-2xl border border-gray-700/50">
-                <h3 className="text-2xl font-bold text-blue-400 mb-2">Frontend Tech Used</h3>
+              <div className="bg-black/30 p-6 rounded-2xl transition-all duration-300 hover:bg-black/40 hover:shadow-[0_0_15px_rgba(0,255,231,0.1)]">
+                <h3 className="text-2xl font-bold text-cyan-400 mb-2">Frontend Tech Used</h3>
                 <div className="flex flex-wrap gap-2 mb-2">
                   {frontendTechs.filter(tech => uniqueTechnologies.includes(tech)).map(tech => (
-                    <span key={tech} className="px-2 py-1 text-xs font-semibold rounded bg-blue-700 text-white">{tech}</span>
+                    <span key={tech} className="px-2 py-1 text-xs font-semibold rounded bg-cyan-700/80 text-white">{tech}</span>
                   ))}
                 </div>
                 <p className="text-gray-400 text-xs">({frontendCount} technologies)</p>
               </div>
-              <div className="bg-gray-900/50 p-6 rounded-2xl border border-gray-700/50">
-                <h3 className="text-2xl font-bold text-green-400 mb-2">Backend Tech Used</h3>
+              <div className="bg-black/30 p-6 rounded-2xl transition-all duration-300 hover:bg-black/40 hover:shadow-[0_0_15px_rgba(16,185,129,0.1)]">
+                <h3 className="text-2xl font-bold text-emerald-400 mb-2">Backend Tech Used</h3>
                 <div className="flex flex-wrap gap-2 mb-2">
                   {backendTechs.filter(tech => uniqueTechnologies.includes(tech)).map(tech => (
-                    <span key={tech} className="px-2 py-1 text-xs font-semibold rounded bg-green-700 text-white">{tech}</span>
+                    <span key={tech} className="px-2 py-1 text-xs font-semibold rounded bg-emerald-700/80 text-white">{tech}</span>
                   ))}
                 </div>
                 <p className="text-gray-400 text-xs">({backendCount} technologies)</p>
               </div>
-              <div className="bg-gray-900/50 p-6 rounded-2xl border border-gray-700/50">
+              <div className="bg-black/30 p-6 rounded-2xl transition-all duration-300 hover:bg-black/40 hover:shadow-[0_0_15px_rgba(139,92,246,0.1)]">
                 <h3 className="text-2xl font-bold text-purple-400 mb-2">React Projects</h3>
                 <p className="text-gray-300 text-lg font-bold">{reactProjects} / {projectCount}</p>
                 <p className="text-gray-400 text-xs mt-1">Built with React.js</p>
               </div>
-              <div className="bg-gray-900/50 p-6 rounded-2xl border border-gray-700/50">
-                <h3 className="text-2xl font-bold text-cyan-400 mb-2">Full-Stack Projects</h3>
+              <div className="bg-black/30 p-6 rounded-2xl transition-all duration-300 hover:bg-black/40 hover:shadow-[0_0_15px_rgba(59,130,246,0.1)]">
+                <h3 className="text-2xl font-bold text-blue-400 mb-2">Full-Stack Projects</h3>
                 <p className="text-gray-300 text-lg font-bold">{fullStackProjects}</p>
                 <p className="text-gray-400 text-xs mt-1">End-to-end development</p>
               </div>
@@ -376,11 +375,12 @@ function App() {
       </section>
       
       {/* Projects Section */}
-      <section id="projects" className="py-16 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="projects" className="py-16 bg-transparent relative">
+        
+        <div className="max-w-7xl mx-auto px-6 relative z-20">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Projects</span>
+              Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">Projects</span>
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Here are some of my recent projects showcasing modern web development techniques and creative solutions
@@ -398,10 +398,11 @@ function App() {
       </section>
       
       {/* Contact Section */}
-      <section id="contact" className="py-16 bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800">
-        <div className="max-w-5xl mx-auto px-6 text-center">
+      <section id="contact" className="py-16 bg-transparent relative">
+        
+        <div className="max-w-5xl mx-auto px-6 text-center relative z-20">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Connect</span>
+            Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">Connect</span>
           </h2>
           <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
             Ready to bring your ideas to life? Let's discuss your next project!
@@ -437,15 +438,16 @@ function App() {
       </section>
       
       {/* Footer */}
-      <footer className="bg-gray-900 border-t border-gray-800 py-8">
-        <div className="max-w-6xl mx-auto px-6 text-center">
+      <footer className="bg-transparent py-8 relative">
+        
+        <div className="max-w-6xl mx-auto px-6 text-center relative z-20">
           <p className="text-gray-400 mb-4">
             © 2025 Abdelrahman Elgendy. Built with React & Tailwind CSS.
           </p>
           <div className="flex justify-center space-x-6">
             <a 
               href="mailto:elge8132@mylaurier.ca" 
-              className="text-gray-500 hover:text-blue-400 transition-colors duration-200"
+              className="text-gray-500 hover:text-cyan-400 transition-colors duration-200"
             >
               Email
             </a>
@@ -453,7 +455,7 @@ function App() {
               href="https://www.linkedin.com/in/abdelrahman-elgendy-cs/" 
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-500 hover:text-blue-400 transition-colors duration-200"
+              className="text-gray-500 hover:text-cyan-400 transition-colors duration-200"
             >
               LinkedIn
             </a>
@@ -461,7 +463,7 @@ function App() {
               href="https://github.com/abdelelgendy" 
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-500 hover:text-blue-400 transition-colors duration-200"
+              className="text-gray-500 hover:text-cyan-400 transition-colors duration-200"
             >
               GitHub
             </a>
