@@ -66,7 +66,7 @@ const getProjectImages = (projectKey) => {
 export const projectsData = [
   {
     id: 1,
-    title: "🎬 React Movie App (TMDB, Appwrite, Tailwind)",
+    title: "🎬 React Movie App ",
     description: "A modern movie discovery app built with React.js, Appwrite, and Tailwind CSS. Browse trending movies, search titles, and explore content using the TMDB API. Features a responsive, sleek UI and a robust backend.",
     fullDescription: {
       problem: "I wanted to build a seamless, modern movie discovery experience that leverages real APIs and scalable backend services. The goal was to create a platform that not only looks great but is also robust, fast, and easy to maintain.",
@@ -195,8 +195,6 @@ export const skillsData = [
       { name: "Express", level: 80, icon: "🚀" },
       { name: "MongoDB", level: 75, icon: "🍃" },
       { name: "Appwrite", level: 75, icon: "🟣" },
-      { name: "TMDB API", level: 70, icon: "🎬" },
-      { name: "React-use", level: 70, icon: "🔄" },
       { name: "Stripe/Razorpay", level: 70, icon: "💳" },
       { name: "Cloudinary", level: 70, icon: "☁️" },
       { name: "REST APIs", level: 85, icon: "🔗" },

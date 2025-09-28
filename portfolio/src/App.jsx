@@ -22,7 +22,7 @@ function App() {
   ).length;
   
   const fullStackProjects = projectsData.filter(project => 
-    project.techStack.some(tech => ['Express', 'Node.js', 'MongoDB', 'Supabase'].includes(tech))
+    project.techStack.some(tech => ['Express', 'Node.js', 'MongoDB', 'Supabase', 'Appwrite'].includes(tech))
   ).length;
   
   // Frontend tech stack proficiency
@@ -30,7 +30,7 @@ function App() {
   const frontendCount = frontendTechs.filter(tech => uniqueTechnologies.includes(tech)).length;
   
   // Backend/Database experience
-  const backendTechs = ['Node.js', 'Express', 'MongoDB', 'Supabase', 'REST API'];
+  const backendTechs = ['Node.js', 'Express', 'MongoDB', 'Supabase', 'REST API', 'Appwrite'];
   const backendCount = backendTechs.filter(tech => uniqueTechnologies.includes(tech)).length;
   // Tech stack color mapping (same as ProjectCard component)
   const getTechColor = (tech) => {
@@ -43,7 +43,7 @@ function App() {
       'HTML5': 'bg-orange-500 text-white',
       'HTML': 'bg-orange-500 text-white',
       'Node.js': 'bg-green-600 text-white',
-      'Express': 'bg-gray-700 text-white',
+      'Express': 'bg-gray-400 text-white',
       'MongoDB': 'bg-green-500 text-white',
       'PostgreSQL': 'bg-blue-700 text-white',
       'MySQL': 'bg-orange-600 text-white',
@@ -75,7 +75,10 @@ function App() {
       'Razorpay': 'bg-blue-700 text-white',
       'Cloudinary': 'bg-blue-500 text-white',
       'JWT': 'bg-gray-800 text-white',
-      'ESLint': 'bg-purple-600 text-white'
+      'ESLint': 'bg-purple-600 text-white',
+      'Appwrite': 'bg-pink-600 text-white',
+      'TMDB API': 'bg-red-600 text-white',
+      'React-use': 'bg-teal-600 text-white'
     };
     return colors[tech] || 'bg-gray-500 text-white';
   };

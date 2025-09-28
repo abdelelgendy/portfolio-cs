@@ -44,10 +44,10 @@ const ProjectCard = ({ project }) => {
       'Razorpay': 'bg-blue-700 text-white',
       'Cloudinary': 'bg-blue-500 text-white',
       'JWT': 'bg-gray-800 text-white',
-      'ESLint': 'bg-purple-600 text-white'
-      , 'Appwrite': 'bg-pink-500 text-white'
-      , 'TMDB API': 'bg-green-700 text-white'
-      , 'React-use': 'bg-gray-400 text-black'
+      'ESLint': 'bg-purple-600 text-white',
+      'Appwrite': 'bg-pink-600 text-white',
+      'TMDB API': 'bg-red-600 text-white',
+      'React-use': 'bg-teal-600 text-white'
     };
     return colors[tech] || 'bg-gray-500 text-white';
   };
